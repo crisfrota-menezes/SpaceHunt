@@ -10,14 +10,14 @@ Venus::~Venus()
 
 void Venus::criarFundo()
 {
-    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/Midia/camadaN1.jpg", 0.0f);
-    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/Midia/camadaN2.png", 0.1f);
-    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/Midia/camadaN3.png", 0.2f);
-    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/Midia/camadaN4.png", 0.3f);
-    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/Midia/camadaN5.png", 0.4f);
-    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/Midia/camadaN6.png", 0.5f);
-    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/Midia/camadaN7.png", 0.6f);
-    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/Midia/camadaN8.png", 0.7f);
+    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/SpaceHunt/Midia/camadaN1.jpg", 0.0f);
+    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/SpaceHunt/Midia/camadaN2.png", 0.1f);
+    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/SpaceHunt/Midia/camadaN3.png", 0.2f);
+    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/SpaceHunt/Midia/camadaN4.png", 0.3f);
+    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/SpaceHunt/Midia/camadaN5.png", 0.4f);
+    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/SpaceHunt/Midia/camadaN6.png", 0.5f);
+    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/SpaceHunt/Midia/camadaN7.png", 0.6f);
+    fundo.addCamada("C:/Users/crisn/Downloads/jogo_cristiano_frota_S73/SpaceHunt/Midia/camadaN8.png", 0.7f);
 }
 
 void Venus::criarMapa()
