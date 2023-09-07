@@ -65,9 +65,9 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         if (vida <= 0)
         {
             cout << "MORTE POR URANIANO" << endl;
-            delete this;
+            //delete this;
             cout << "GAME OVER" << endl;
-            exit(0);
+            //exit(0);
         }
         else
         {
@@ -84,9 +84,9 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         if (vida <= 0)
         {
             cout << "MORTE POR VENUSIANO" << endl;
-            delete this;
+            //delete this;
             cout << "GAME OVER" << endl;
-            exit(0);
+            //exit(0);
         }
         else
         {
@@ -103,9 +103,9 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         if (vida <= 0)
         {
             cout << "MORTE POR VERME" << endl;
-            delete this;
+            //delete this;
             cout << "GAME OVER" << endl;
-            exit(0);
+            // exit(0);
         }
         else
         {
