@@ -1,4 +1,3 @@
-
 #include "principal.hpp"
 
 Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()), pEvento(pEvento->getGerenciadorEvento()), fase(nullptr)
@@ -30,7 +29,7 @@ Jogo::~Jogo()
 
 void Jogo::criarFase()
 {
-    Venus *aux = new Venus();
+    Marte *aux = new Marte();
     if (aux == nullptr)
     {
         cout << "Erro ao criar a fase" << endl;
