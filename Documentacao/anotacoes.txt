@@ -1,0 +1,27 @@
+Desacoplamentos:
+
+- Na classe Ente fazer o Gerenciador Gráfico ser estático(talvez até const) pois existirá apenas um 
+(utilizar o padrão de projeto singleton).
+- Na classe Entidade o atributo vida está publico, fazer ele privado e criar funções para trabalhar com esse atributo.
+- As classes precisam ter uma construtora sem parametros(aqui da pra por apenas valores default)
+- Ente precisa de um método executar e imprimir.
+- Entidade não precisa ter vida e dano, isso são referentes a Personagem(ex: Plataforma é Entidade sem dano ou vida).
+- Remover o imprimir de Atualizar Posicao em Personagem, e trocar a atualizarPos para calcularPos e fazer outra função para atualizarPos.
+- Na Classe Personagem, trabalhar melhor com a velocidade máxima.
+- Em Inimigo tem código duplicado aplicado na construtora e no método atualizaMoveAleatorio
+
+
+Verificações: 
+
+- Entender e usar corretamente os namespaces.
+
+
+Dúvidas:
+
+- Na classe Personagem, no método Atualizar Posicao, está sendo aplicado a gravidade duas vezes?
+
+
+
+Observações:
+
+- Achei legal a função de perseguir o Jogador.
