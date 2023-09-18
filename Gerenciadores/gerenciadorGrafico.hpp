@@ -22,13 +22,13 @@ namespace SpaceHunt
 
         public:
             ~GerenciadorGrafico();
-            static GerenciadorGrafico *getGerenciadorGrafico();
+            static GerenciadorGrafico *getGerenciadorGrafico(); // n]ao sei se aqui precisa ser estático visto que é um singleton
             sf::RenderWindow *getWindow();
             void limpar();
             void desenhaElemento(sf::RectangleShape corpo);
             void mostraElementos();
             void fechaJanela();
-            sf::Texture carregarTextura(const char *caminho);
+            sf::Texture carregarTextura(const char *caminho );
             const bool janelaAberta();
             void atualizarCamera(const sf::Vector2f posJogador);
             const sf::View getCamera();

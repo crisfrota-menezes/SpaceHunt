@@ -91,8 +91,8 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         else
         {
             // Código que empurra o jogador para trás
-            setPos(sf::Vector2f(pos.x, pos.y - 25.0f));
             noChao = false;
+            setPos(sf::Vector2f(pos.x, pos.y - 25.0f)); // Aqui está empurrando pra baixo
         }
     }
     break;
