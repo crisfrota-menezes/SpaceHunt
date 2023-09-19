@@ -22,7 +22,7 @@ namespace SpaceHunt
 
         public:
             ~GerenciadorGrafico();
-            static GerenciadorGrafico *getGerenciadorGrafico(); // n]ao sei se aqui precisa ser estático visto que é um singleton
+            static GerenciadorGrafico *getGerenciadorGrafico(); // nao sei se aqui precisa ser estático visto que é um singleton
             sf::RenderWindow *getWindow();
             void limpar();
             void desenhaElemento(sf::RectangleShape corpo);
@@ -37,3 +37,4 @@ namespace SpaceHunt
     using namespace Gerenciadores;
 }
 using namespace SpaceHunt;
+
