@@ -73,6 +73,7 @@ const bool GerenciadorGrafico::janelaAberta()
 void GerenciadorGrafico::atualizarCamera(const sf::Vector2f posJogador)
 {
     camera.setCenter(posJogador.x, 540.0f);
+
     window->setView(camera);
 }
 
