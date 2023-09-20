@@ -1,40 +1,28 @@
-Desacoplamentos:
+Alterações 1:
 
-- Na classe Ente fazer o Gerenciador Gráfico ser estático(talvez até const) pois existirá apenas um 
-(utilizar o padrão de projeto singleton).
-- Na classe Entidade o atributo vida está publico, fazer ele privado e criar funções para trabalhar com esse atributo.
-- As classes precisam ter uma construtora sem parametros(aqui da pra por apenas valores default).
-- Ente precisa de um método executar e imprimir.
-- Entidade não precisa ter vida e dano, isso são referentes a Personagem(ex: Plataforma é Entidade sem dano ou vida).
-- Remover o imprimir de Atualizar Posicao em Personagem, e trocar a atualizarPos para calcularPos e fazer outra função para atualizarPos.
-- Na Classe Personagem, trabalhar melhor com a velocidade máxima.
-- Em Inimigo tem código duplicado aplicado na construtora e no método atualizaMoveAleatorio.
-- Em inimigo é bom continuar com o método colisao virtual e definir ele nas classes bases.
-- O método pular pode ser relativo a Personagem e a gente utiliza ele nas demais classes bases.
-- É bom as Entidades terem um atributo tamanho mas é melhor a gente atrelar ele ao tamanho que o SFML nos dá.
-- No gerenciador Gráfico não sei se ele precisa de método e atributo estático visto que é um singleton.
-- Ajeitar o método atualizarCamera para suportar dois jogadores.
-- No Gerenciado de Eventos o método verificaTeclaPressionada pode ser utilizado um switch/case.
-- 
+- Na classe Entidade o atributo vida está publico, fazer ele privado e criar funções para trabalhar com esse atributo. ->> Meio feito. -> Cris
+- O método pular pode ser relativo a Personagem e a gente utiliza ele nas demais classes bases. ->> A Fazer. -> Cris.
+- Ente precisa de um método atualizar virtual puro e classes bases tem de ter a implementação. ->> A Fazer. -> Cris 
+- No gerenciador Gráfico não sei se ele precisa de método e atributo estático visto que é um singleton. ->> A verificar -> Cris
+- No Gerenciado de Eventos o método verificaTeclaPressionada pode ser utilizado um switch/case. ->>  A Fazer. -> Cris
 
 
-Verificações: 
-
-- Entender e usar corretamente os namespaces.
-
-
-Dúvidas:
-
-- Na classe Personagem, no método Atualizar Posicao, está sendo aplicado a gravidade duas vezes?
-- Em inimigo não entendi muito bem o dtAux.
-- Em Jogador não entendi muito bem a função podePular().
+- Na classe Ente fazer o Gerenciador Gráfico ser estático(talvez até const) pois existirá apenas um. ->> A Fazer. -> Ricardo
+- As classes precisam ter uma construtora sem parametros(aqui da pra por apenas valores default). ->> A Fazer. -> Ricardo.
+- Rever movimentação dos personagens. ->> A Fazer. -> Ricardo.
+- Em inimigo é bom continuar com o método colisao virtual e definir ele nas classes bases. ->> Meio feito. -> Ricardo.
+- É bom as Entidades terem um atributo tamanho mas é melhor a gente atrelar ele ao tamanho que o SFML nos dá. ->> A Fazer. -> Ricardo
 
 
-Observações:
 
-- Achei legal a função de perseguir o Jogador.
+
+Alterações 2:
+
+- Ajeitar o método atualizarCamera para suportar dois jogadores,  colocar limite de onde o jogador pode andar. ->> A Fazer
+
+
 
 Ideias:
 
 - Utilizar várias listas em diferentes classes. EX: Ter no Jogo em si Lista de Entidades e em fase ter Lista de Inimigos, Obstaculos, etc.
-- Estudar mais padrões de projetos. 
+- Estudar mais padrões de projetos.

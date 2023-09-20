@@ -37,8 +37,8 @@ void Personagem::atualizarPos()
     }
 
     // sofre o efeito da gravidade
-    velFinal.y += GRAVIDADE * dt;
-    ds.y = velFinal.y * GRAVIDADE;
+    velFinal.y += GRAVIDADE * dt; // Aplicando Gravidade na Velocidade
+    ds.y = velFinal.y * GRAVIDADE; // Aplicando Gravidade na  movimentação.
 
     // atualiza posição
     setPos(sf::Vector2f(pos.x + ds.x, pos.y + ds.y));
