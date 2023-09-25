@@ -39,7 +39,7 @@ void GerenciadorGrafico::limpar()
     window->clear();
 }
     
-void GerenciadorGrafico::desenhaElemento(sf::RectangleShape corpo)
+void GerenciadorGrafico::desenhaElemento(sf::Sprite corpo)
 {
     window->draw(corpo);
 }

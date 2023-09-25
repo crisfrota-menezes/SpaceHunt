@@ -4,6 +4,8 @@ Ente::Ente(const Identidade::IDs id):identificador(id){
 
 }
 
+Ente::Ente():identificador(){
+}
 
 Ente::~Ente(){
 }
@@ -14,6 +16,10 @@ const Identidade::IDs Ente::getID() const{
 
 void Ente::setGGrafico(GerenciadorGrafico* Grafico){
     pGrafico = Grafico;
+}
+
+void Ente::desenhar(){
+    pGrafico->desenhaElemento(Imagem);
 }
 
 GerenciadorGrafico* SpaceHunt::Ente::pGrafico = nullptr;

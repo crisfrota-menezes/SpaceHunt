@@ -25,7 +25,7 @@ namespace SpaceHunt
             static GerenciadorGrafico *getGerenciadorGrafico(); // nao sei se aqui precisa ser estático visto que é um singleton
             sf::RenderWindow *getWindow();
             void limpar();
-            void desenhaElemento(sf::RectangleShape corpo);
+            void desenhaElemento(sf::Sprite corpo);
             void mostraElementos();
             void fechaJanela();
             sf::Texture carregarTextura(const char *caminho );
