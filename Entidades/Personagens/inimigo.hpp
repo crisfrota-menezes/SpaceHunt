@@ -24,7 +24,7 @@ namespace SpaceHunt
                 int moveAleatorio;
 
             public:
-                Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador, IDs::IDs ID);
+                Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador, Identidade::IDs id);
                 ~Inimigo();
                 virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
                 void atualizar();

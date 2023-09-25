@@ -13,7 +13,6 @@ namespace SpaceHunt
         public:
             int vida;
             Entidade(const sf::Vector2f pos, const Identidade::IDs id);
-            Entidade();
             ~Entidade();
             void setPos(sf::Vector2f pos);
             sf::Vector2f getPos();

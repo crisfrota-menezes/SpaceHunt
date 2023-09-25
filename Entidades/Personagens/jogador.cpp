@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador), noChao(false)
+Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, Identidade::IDs::jogador), noChao(false)
 {
     vida = 10;
     inicializa();
@@ -20,14 +20,14 @@ void Jogador::inicializa()
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/CaiJ.png", "CAI", 1, 0.15f, sf::Vector2f(3, 1.5));
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AtacaJ.png", "ATACA", 4, 0.15f, sf::Vector2f(3, 1.5));
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/HitJ.png", "HIT", 3, 0.15f, sf::Vector2f(3, 1.5));
-    corpo.setOrigin(sf::Vector2f(tam.x / 2.0f, tam.y / 5.8f));
+    Imagem.setOrigin(sf::Vector2f(Imagem.getTextureRect().width / 2.0f, Imagem.getTextureRect().height / 5.8f));
 }
 
 void Jogador::atualizar()
 {
     atualizarPos();
     animar();
-    pGrafico->atualizarCamera(pos);
+    pGrafico->atualizarCamera(Imagem.getPosition());
 }
 
 void Jogador::animar()
@@ -58,7 +58,7 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 {
     switch (outraEntidade->getID())
     {
-    case (IDs::IDs::Uraniano):
+    case (Identidade::IDs::Uraniano):
     {
         cout << "AI" << endl;
         vida -= outraEntidade->getDano();
@@ -72,12 +72,12 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         else
         {
             // Código que empurra o jogador para trás
-            setPos(sf::Vector2f(pos.x, pos.y - 25.0f));
+            setPos(sf::Vector2f(Imagem.getPosition().x, Imagem.getPosition().y - 25.0f));
             noChao = false;
         }
     }
     break;
-    case (IDs::IDs::Venusiano):
+    case (Identidade::IDs::Venusiano):
     {
         cout << "AI" << endl;
         vida -= outraEntidade->getDano();
@@ -92,11 +92,11 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         {
             // Código que empurra o jogador para trás
             noChao = false;
-            setPos(sf::Vector2f(pos.x, pos.y - 25.0f)); // Aqui está empurrando pra baixo
+            setPos(sf::Vector2f(Imagem.getPosition().x, Imagem.getPosition().y - 25.0f)); // Aqui está empurrando pra baixo
         }
     }
     break;
-    case (IDs::IDs::Verme):
+    case (Identidade::IDs::Verme):
     {
         cout << "AI" << endl;
         vida -= outraEntidade->getDano();
@@ -110,11 +110,11 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         else
         {
             // Código que empurra o jogador para trás
-            setPos(sf::Vector2f(pos.x, pos.y - 25.0f));
+            setPos(sf::Vector2f(Imagem.getPosition().x, Imagem.getPosition().y - 25.0f));
             noChao = false;
         }
     }
-    case (IDs::IDs::plataforma):
+    case (Identidade::IDs::plataforma):
     {
     }
     }

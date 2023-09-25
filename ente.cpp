@@ -1,12 +1,7 @@
 #include "ente.hpp"
 
 Ente::Ente(const Identidade::IDs id):identificador(id){
-
 }
-
-Ente::Ente():identificador(){
-}
-
 Ente::~Ente(){
 }
 

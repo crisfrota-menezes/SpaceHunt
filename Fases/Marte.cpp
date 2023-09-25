@@ -1,6 +1,6 @@
 #include "Marte.hpp"
 
-Marte::Marte() : Fase(IDs::IDs::fase_Marte, IDs::IDs::fundo_Marte)
+Marte::Marte() : Fase(Identidade::IDs::fase_Marte, Identidade::IDs::fundo_Marte)
 {
 }
 

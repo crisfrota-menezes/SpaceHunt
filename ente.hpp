@@ -16,7 +16,7 @@ namespace SpaceHunt
         sf::Sprite Imagem;
 
     public:
-        Ente(const Identidade::IDs id);
+        Ente(const Identidade::IDs id = Identidade::IDs::vazio);
         Ente();
         virtual ~Ente();
         const Identidade::IDs getID() const;
