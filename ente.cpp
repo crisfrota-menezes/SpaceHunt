@@ -1,14 +1,19 @@
 #include "ente.hpp"
 
-Ente::Ente(const IDs::IDs ID) : ID(ID), pGrafico(pGrafico->getGerenciadorGrafico())
-{
+Ente::Ente(const Identidade::IDs id):identificador(id){
+
 }
 
-Ente::~Ente()
-{
+
+Ente::~Ente(){
 }
 
-const IDs::IDs Ente::getID() const
-{
-    return ID;
+const Identidade::IDs Ente::getID() const{
+    return identificador;
 }
+
+void Ente::setGGrafico(GerenciadorGrafico* Grafico){
+    pGrafico = Grafico;
+}
+
+GerenciadorGrafico* SpaceHunt::Ente::pGrafico = nullptr;

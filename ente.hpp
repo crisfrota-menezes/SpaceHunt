@@ -11,15 +11,16 @@ namespace SpaceHunt
     class Ente
     {
     protected:
-         GerenciadorGrafico *pGrafico;
-        const IDs::IDs ID;
+       static GerenciadorGrafico* pGrafico;
+        const Identidade::IDs identificador;
 
     public:
-        Ente(const IDs::IDs ID);
+        Ente(const Identidade::IDs id);
         ~Ente();
-        const IDs::IDs getID() const;
+        const Identidade::IDs getID() const;
         virtual void desenhar() = 0;
         virtual void atulizar() = 0;
+        void setGGrafico(GerenciadorGrafico* pGrafico);
     };
 }
 using namespace SpaceHunt;
