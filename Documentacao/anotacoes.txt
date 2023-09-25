@@ -7,7 +7,6 @@ Alterações 1:
 - No Gerenciado de Eventos o método verificaTeclaPressionada pode ser utilizado um switch/case. ->>  A Fazer. -> Cris
 
 
-- Na classe Ente fazer o Gerenciador Gráfico ser estático(talvez até const) pois existirá apenas um. ->> A Fazer. -> Ricardo
 - As classes precisam ter uma construtora sem parametros(aqui da pra por apenas valores default). ->> A Fazer. -> Ricardo.
 - Rever movimentação dos personagens. ->> A Fazer. -> Ricardo.
 - Em inimigo é bom continuar com o método colisao virtual e definir ele nas classes bases. ->> Meio feito. -> Ricardo.
