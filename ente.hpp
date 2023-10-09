@@ -1,6 +1,6 @@
 #pragma once
 
-#include <../SFML/include/SFML/Graphics.hpp>
+#include "SFML/Graphics.hpp"
 #include <iostream>
 
 #include "IDs.hpp"
@@ -13,7 +13,8 @@ namespace SpaceHunt
     protected:
        static GerenciadorGrafico* pGrafico;
         const Identidade::IDs identificador;
-        sf::Sprite Imagem;
+        sf::Sprite sprite;
+        sf::Texture textura;
 
     public:
         Ente(const Identidade::IDs id = Identidade::IDs::vazio);
@@ -23,6 +24,8 @@ namespace SpaceHunt
         virtual void desenhar();
         virtual void atulizar() = 0;
         void setGGrafico(GerenciadorGrafico* pGrafico);
+        const sf::Texture* getTexture() const;
+        sf::Sprite* getSprite();
     };
 }
 using namespace SpaceHunt;

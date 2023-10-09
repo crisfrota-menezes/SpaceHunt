@@ -24,7 +24,7 @@ namespace SpaceHunt
                 Animacao animacao;
 
             public:
-                Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID);
+                Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const Identidade::IDs ID);
                 ~Personagem();
                 void setVelFinal(sf::Vector2f velFinal);
                 const sf::Vector2f getVelFinal() const;

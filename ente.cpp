@@ -1,6 +1,8 @@
 #include "ente.hpp"
 
-Ente::Ente(const Identidade::IDs id):identificador(id){
+Ente::Ente(const Identidade::IDs id):identificador(id),sprite(),textura(){
+    sprite.setTextureRect(sf::IntRect(250,250,30,30)); // padrão para objetos inicializados mal
+    sprite.setColor(sf::Color::Blue);
 }
 Ente::~Ente(){
 }
@@ -14,7 +16,7 @@ void Ente::setGGrafico(GerenciadorGrafico* Grafico){
 }
 
 void Ente::desenhar(){
-    pGrafico->desenhaElemento(Imagem);
+    pGrafico->desenhaElemento(sprite);
 }
 
 GerenciadorGrafico* SpaceHunt::Ente::pGrafico = nullptr;

@@ -1,7 +1,7 @@
 #include "Personagem.hpp"
 
-Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : Entidade(pos, tam, ID), podeMover(false), paraEsquerda(false), relogio(), dt(0.0f), velFinal(sf::Vector2f(vel, 0.0f)), velMax(vel), atacando(false), animacao(&corpo)
-{
+Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const Identidade::IDs id) : Entidade(pos,id), podeMover(false), paraEsquerda(false), relogio(),
+dt(0.0f), velFinal(sf::Vector2f(vel, 0.0f)), velMax(vel), atacando(false){
 }
 
 Personagem::~Personagem()
@@ -41,7 +41,7 @@ void Personagem::atualizarPos()
     ds.y = velFinal.y * GRAVIDADE; // Aplicando Gravidade na  movimentação.
 
     // atualiza posição
-    setPos(sf::Vector2f(pos.x + ds.x, pos.y + ds.y));
+    setPos(sf::Vector2f(Imagem.getPosition().x + ds.x, Imagem.getPosition().y + ds.y));
 
     // atualiza velocidade na horizontal
     velFinal.x = velMax;

@@ -16,9 +16,10 @@ namespace SpaceHunt
             private:
                 void inicializa();
                 bool noChao;
-
+                bool n_jogador;
+                static bool Jogador2;
             public:
-                Jogador(const sf::Vector2f pos, const sf::Vector2f tam);
+                Jogador(const sf::Vector2f pos = sf::Vector2f(0.0,0.0));
                 ~Jogador();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
                 void atualizar();

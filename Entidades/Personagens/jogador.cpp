@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, Identidade::IDs::jogador), noChao(false)
+Jogador::Jogador(const sf::Vector2f pos) : Personagem(pos,sf::Vector2f(1.0,1.0), VELOCIDADE_JOGADOR, Identidade::IDs::jogador), noChao(false)
 {
     vida = 10;
     inicializa();
@@ -14,12 +14,12 @@ Jogador::~Jogador()
 
 void Jogador::inicializa()
 {
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AndaJ.png", "ANDA", 3, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/ParadoJ.png", "PARADO", 10, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/PulaJ.png", "PULA", 8, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/CaiJ.png", "CAI", 1, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AtacaJ.png", "ATACA", 4, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/HitJ.png", "HIT", 3, 0.15f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/rbben/Documents/Faculdade/2023-2/Tec_Prog/APS/SpaceHunt/Midia/AndaJ.png", "ANDA", 3, 0.15f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/rbben/Documents/Faculdade/2023-2/Tec_Prog/APS/SpaceHunt/Midia/ParadoJ.png", "PARADO", 10, 0.15f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/rbben/Documents/Faculdade/2023-2/Tec_Prog/APS/SpaceHunt/Midia/PulaJ.png", "PULA", 8, 0.15f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/rbben/Documents/Faculdade/2023-2/Tec_Prog/APS/SpaceHunt/Midia/CaiJ.png", "CAI", 1, 0.15f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/rbben/Documents/Faculdade/2023-2/Tec_Prog/APS/SpaceHunt/Midia/AtacaJ.png", "ATACA", 4, 0.15f, sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("C:/Users/rbben/Documents/Faculdade/2023-2/Tec_Prog/APS/SpaceHunt/Midia/HitJ.png", "HIT", 3, 0.15f, sf::Vector2f(3, 1.5));
     Imagem.setOrigin(sf::Vector2f(Imagem.getTextureRect().width / 2.0f, Imagem.getTextureRect().height / 5.8f));
 }
 
@@ -133,3 +133,5 @@ void Jogador::podePular()
 {
     noChao = true;
 }
+
+bool Jogador::Jogador2 = false;
