@@ -22,7 +22,7 @@ namespace SpaceHunt
         virtual ~Ente();
         const Identidade::IDs getID() const;
         virtual void desenhar();
-        virtual void atulizar() = 0;
+        virtual void executar() = 0;
         void setGGrafico(GerenciadorGrafico* pGrafico);
         const sf::Texture* getTexture() const;
         sf::Sprite* getSprite();

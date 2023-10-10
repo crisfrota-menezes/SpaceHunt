@@ -1,13 +1,8 @@
 #pragma once
 
-//Classe Base
-#include "../ente.hpp"
-
 #include "../Parallax/fundo.hpp"
 
 //Personagens
-#include "../Entidades/Personagens/inimigo.hpp"
-#include "../Entidades/Personagens/personagem.hpp"
 #include "../Entidades/Personagens/jogador.hpp"
 #include "../Entidades/Personagens/uraniano.hpp"
 #include "../Entidades/Personagens/verme.hpp"
@@ -40,7 +35,7 @@ namespace SpaceHunt {
             Fundo fundo;
             
         public:
-            Fase(const Identidade::IDs ID_Fase, const Identidade::IDs ID_Fundo);
+            Fase(const Identidade::IDs ID_Fase = Identidade::IDs::vazio, const Identidade::IDs ID_Fundo = Identidade::IDs::vazio);
             ~Fase();
             void criaUraniano(const sf::Vector2f pos);
             void criaVerme(const sf::Vector2f pos);

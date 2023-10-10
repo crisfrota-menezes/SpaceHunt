@@ -1,6 +1,6 @@
 #include "Venus.hpp"
 
-Venus::Venus() : Fase(IDs::IDs::fase_Venus, IDs::IDs::fundo_Venus)
+Venus::Venus() : Fase(Identidade::IDs::fase_Venus, Identidade::IDs::fundo_Venus)
 {
 }
 

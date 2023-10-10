@@ -17,7 +17,7 @@ namespace SpaceHunt
             {
             public:
                 Projetil(const sf::Vector2f pos = sf::Vector2f(0.0,0.0) , Entidade* don = nullptr);
-                void atualizar();
+                void executar();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds);
 
             private:

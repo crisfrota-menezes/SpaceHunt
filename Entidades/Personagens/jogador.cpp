@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-Jogador::Jogador(const sf::Vector2f pos) : Personagem(pos,sf::Vector2f(1.0,1.0), VELOCIDADE_JOGADOR, Identidade::IDs::jogador), noChao(false)
+Jogador::Jogador(const sf::Vector2f pos) : Personagem(pos, VELOCIDADE_JOGADOR, Identidade::IDs::jogador), noChao(false)
 {
     vida = 10;
     inicializa();
@@ -14,20 +14,20 @@ Jogador::~Jogador()
 
 void Jogador::inicializa()
 {
-    animacao.addAnimacao("C:/Users/rbben/Documents/Faculdade/2023-2/Tec_Prog/APS/SpaceHunt/Midia/AndaJ.png", "ANDA", 3, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/rbben/Documents/Faculdade/2023-2/Tec_Prog/APS/SpaceHunt/Midia/ParadoJ.png", "PARADO", 10, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/rbben/Documents/Faculdade/2023-2/Tec_Prog/APS/SpaceHunt/Midia/PulaJ.png", "PULA", 8, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/rbben/Documents/Faculdade/2023-2/Tec_Prog/APS/SpaceHunt/Midia/CaiJ.png", "CAI", 1, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/rbben/Documents/Faculdade/2023-2/Tec_Prog/APS/SpaceHunt/Midia/AtacaJ.png", "ATACA", 4, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/rbben/Documents/Faculdade/2023-2/Tec_Prog/APS/SpaceHunt/Midia/HitJ.png", "HIT", 3, 0.15f, sf::Vector2f(3, 1.5));
-    Imagem.setOrigin(sf::Vector2f(Imagem.getTextureRect().width / 2.0f, Imagem.getTextureRect().height / 5.8f));
+    animacao.addAnimacao("ANDA", sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("PARADO", sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("PULA", sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("CAI", sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("ATACA", sf::Vector2f(3, 1.5));
+    animacao.addAnimacao("HIT", sf::Vector2f(3, 1.5));
+    sprite.setOrigin(sf::Vector2f(sprite.getTextureRect().width / 2.0f, sprite.getTextureRect().height / 5.8f));
 }
 
-void Jogador::atualizar()
+void Jogador::executar()
 {
     atualizarPos();
     animar();
-    pGrafico->atualizarCamera(Imagem.getPosition());
+    pGrafico->atualizarCamera(sprite.getPosition());
 }
 
 void Jogador::animar()
@@ -72,7 +72,7 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         else
         {
             // Código que empurra o jogador para trás
-            setPos(sf::Vector2f(Imagem.getPosition().x, Imagem.getPosition().y - 25.0f));
+            setPos(sf::Vector2f(sprite.getPosition().x, sprite.getPosition().y - 25.0f));
             noChao = false;
         }
     }
@@ -92,7 +92,7 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         {
             // Código que empurra o jogador para trás
             noChao = false;
-            setPos(sf::Vector2f(Imagem.getPosition().x, Imagem.getPosition().y - 25.0f)); // Aqui está empurrando pra baixo
+            setPos(sf::Vector2f(sprite.getPosition().x, sprite.getPosition().y - 25.0f)); // Aqui está empurrando pra baixo
         }
     }
     break;
@@ -110,7 +110,7 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         else
         {
             // Código que empurra o jogador para trás
-            setPos(sf::Vector2f(Imagem.getPosition().x, Imagem.getPosition().y - 25.0f));
+            setPos(sf::Vector2f(sprite.getPosition().x, sprite.getPosition().y - 25.0f));
             noChao = false;
         }
     }

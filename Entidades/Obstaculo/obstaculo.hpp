@@ -15,13 +15,12 @@ namespace SpaceHunt
             class Obstaculo : public Entidade
             {
             protected:
-                sf::Texture textura;
 
             public:
-                Obstaculo(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID, const char *caminhoTextura);
+                Obstaculo(const sf::Vector2f pos = sf::Vector2f(0.0,0.0) , const Identidade::IDs ID = Identidade::IDs::vazio);
                 ~Obstaculo();
                 virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
-                void atualizar();
+                virtual void executar() = 0;
                 virtual void colisaoObstaculo(sf::Vector2f ds, Personagem* pPersonagem);
             };
         }

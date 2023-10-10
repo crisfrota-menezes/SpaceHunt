@@ -9,7 +9,7 @@ Projetil::Projetil(const sf::Vector2f pos, Entidade* don)
     sprite.setColor(sf::Color::Yellow);
 }
 
-void Projetil::atualizar()
+void Projetil::executar()
 {
     sprite.move(velocidade, 0.0f);
 

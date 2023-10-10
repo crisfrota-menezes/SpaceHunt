@@ -16,3 +16,11 @@ void Uraniano::inicializa()
     animacao.addAnimacao("PARADO", sf::Vector2f(3, 1.5));
     sprite.setOrigin(sprite.getTexture()->getSize().x / 3.0f, sprite.getTexture()->getSize().y / 5.0f);
 }
+
+void Uraniano::colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)){
+
+}
+
+void Uraniano::executar(){
+
+}

@@ -1,6 +1,6 @@
 #include "fundo.hpp"
 
-Fundo::Fundo(const IDs::IDs ID):
+Fundo::Fundo(const Identidade::IDs ID):
     Ente(ID), posAnteriorCamera(pGrafico->getCamera().getCenter()),
     camadas()
 { 

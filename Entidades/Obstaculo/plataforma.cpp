@@ -1,6 +1,6 @@
 #include "plataforma.hpp"
 
-Plataforma::Plataforma(sf::Vector2f pos, sf::Vector2f tam) : Obstaculo(pos, tam, IDs::IDs::plataforma, CAMINHO_PLATAFORMA)
+Plataforma::Plataforma(sf::Vector2f pos) : Obstaculo(pos, Identidade::IDs::plataforma)
 {
 }
 
@@ -11,10 +11,14 @@ Plataforma::~Plataforma()
 void Plataforma::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 {
     sf::Vector2f posOutro = outraEntidade->getPos();
-    sf::Vector2f tamOutro = outraEntidade->getTam();
+    sf::Vector2i tamOutro = outraEntidade->getSprite()->getTextureRect().getSize();
 
-    if (outraEntidade->getID() == IDs::IDs::jogador || outraEntidade->getID() == IDs::IDs::Uraniano || outraEntidade->getID() == IDs::IDs::Venusiano || outraEntidade->getID() == IDs::IDs::Verme)
+    if (outraEntidade->getID() == Identidade::IDs::jogador || outraEntidade->getID() == Identidade::IDs::Uraniano || outraEntidade->getID() == Identidade::IDs::Venusiano || outraEntidade->getID() == Identidade::IDs::Verme)
     {
         colisaoObstaculo(ds, static_cast<Personagem *>(outraEntidade));
     }
+}
+
+void Plataforma::executar(){
+
 }

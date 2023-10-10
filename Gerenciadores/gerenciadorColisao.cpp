@@ -21,8 +21,8 @@ const sf::Vector2f GerenciadorColisao::calculaColisao(Entidade *ent1, Entidade *
     sf::Vector2f pos1 = ent1->getPos();
     sf::Vector2f pos2 = ent2->getPos();
 
-    sf::Vector2f tam1 = ent1->getTam();
-    sf::Vector2f tam2 = ent2->getTam();
+    sf::Vector2i tam1 = ent1->getSprite()->getTextureRect().getSize();
+    sf::Vector2i tam2 = ent2->getSprite()->getTextureRect().getSize();
 
     sf::Vector2f distanciaEntreCentros(
         fabs((pos1.x + tam1.x / 2.0f) - (pos2.x + tam2.x / 2.0f)),
@@ -56,15 +56,15 @@ void GerenciadorColisao::executar()
             sf::Vector2f ds = calculaColisao(ent1, ent2);
             if (ds.x < 0.0f && ds.y < 0.0f)
             {
-                if (ent2->getID() == IDs::IDs::plataforma)
+                if (ent2->getID() == Identidade::IDs::plataforma)
                 {
                     ent2->colisao(ent1, ds);
                 }
-                else if (ent2->getID() == IDs::IDs::Rochas)
+                else if (ent2->getID() == Identidade::IDs::Rochas)
                 {
                     ent2->colisao(ent1, ds);
                 }
-                else if (ent2->getID() == IDs::IDs::Arvore)
+                else if (ent2->getID() == Identidade::IDs::Arvore)
                 {
                     ent2->colisao(ent1, ds);
                 }

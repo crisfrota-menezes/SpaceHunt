@@ -33,7 +33,7 @@ namespace SpaceHunt
                 void atualizarPos();
                 virtual void animar();
                 virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
-                virtual void atualizar() = 0;
+                virtual void executar() = 0;
             };
         }
         using namespace Personagens;

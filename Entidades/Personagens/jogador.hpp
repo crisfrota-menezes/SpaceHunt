@@ -22,7 +22,7 @@ namespace SpaceHunt
                 Jogador(const sf::Vector2f pos = sf::Vector2f(0.0,0.0));
                 ~Jogador();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
-                void atualizar();
+                void executar();
                 void pular();
                 void podePular();
                 void animar();
