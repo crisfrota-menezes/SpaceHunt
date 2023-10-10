@@ -18,7 +18,7 @@ void Venusiano::inicializa()
     sprite.setOrigin(sprite.getTexture()->getSize().x / 3.0f, sprite.getTexture()->getSize().y / 5.7f);
 }
 
-void Venusiano::colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)){
+void Venusiano::colisao(Entidade *outraEnt, sf::Vector2f ds){
 
 }
 

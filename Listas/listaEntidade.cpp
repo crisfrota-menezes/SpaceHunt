@@ -45,7 +45,7 @@ void ListaEntidades::executar()
     for (int i = 0; i < tam; i++)
     {
         aux = lista.operator[](i);
-        aux->atualizar();
+        aux->executar();
     }
 }
 

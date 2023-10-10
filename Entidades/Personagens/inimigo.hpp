@@ -26,7 +26,7 @@ namespace SpaceHunt
             public:
                 Inimigo(const sf::Vector2f pos = sf::Vector2f(0.0,0.0) , Jogador *jogador = nullptr , Identidade::IDs id = Identidade::IDs::vazio);
                 ~Inimigo();
-                virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
+                virtual void colisao(Entidade *outraEnt, sf::Vector2f ds) = 0;
                 virtual void executar() = 0;
                 void atualizar();
                 void atualizaMoveAleatorio();

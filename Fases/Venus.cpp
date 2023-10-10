@@ -44,3 +44,7 @@ void Venus::criarMapa()
     }
     arquivo.close();
 }
+
+void Venus::executar(){
+    
+}

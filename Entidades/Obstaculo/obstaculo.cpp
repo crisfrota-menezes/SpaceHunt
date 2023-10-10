@@ -8,10 +8,6 @@ Obstaculo::~Obstaculo(){
 
 }
 
-void Obstaculo::atualizar(){
-    desenhar();
-}
-
 void Obstaculo::colisaoObstaculo(sf::Vector2f ds, Personagem* pPersonagem){
     sf::Vector2f posOutro = pPersonagem->getPos();
     sf::Vector2i tamOutro = pPersonagem->getSprite()->getTextureRect().getSize();

@@ -44,3 +44,7 @@ void Marte::criarMapa()
     }
     arquivo.close();
 }
+
+void Marte::executar(){
+    
+}

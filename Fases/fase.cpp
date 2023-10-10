@@ -175,7 +175,7 @@ void Fase::desenhar()
     listaObstaculos.executar();
 }
 
-void Fase::executar()
+/*void Fase::executar()
 {
     fundo.executar();
 
@@ -184,4 +184,4 @@ void Fase::executar()
 
     // verifica colisão
     pColisao->executar();
-}
+}*/

@@ -47,9 +47,8 @@ namespace SpaceHunt {
             void criarProjetil(const sf::Vector2f pos);
             virtual void criarMapa() = 0;
             void criarEntidade(char letra, const sf::Vector2i pos);
-            void executar();
             void desenhar();
-            virtual void atualizar() = 0;
+            virtual void executar() = 0;
             virtual void criarFundo() = 0;
         };
     }
