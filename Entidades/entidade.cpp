@@ -9,15 +9,14 @@ Entidade::~Entidade(){
 
 void Entidade::setPos(const sf::Vector2f pos)
 {
-    Imagem.setPosition(pos);
+    sprite.setPosition(pos);
 }
 
 sf::Vector2f Entidade::getPos(){
-    return Imagem.getPosition();
+    return sprite.getPosition();
 }
 
 
-int Entidade::getDano()
-{
+int Entidade::getDano(){
     return dano;
 }

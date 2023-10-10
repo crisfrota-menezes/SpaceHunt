@@ -1,25 +1,25 @@
 #include "projetil.hpp"
 
-Projetil::Projetil(const sf::Vector2f pos, Jogador *jogador)
+Projetil::Projetil(const sf::Vector2f pos, Entidade* don)
     : Entidade(pos, Identidade::IDs::Projetil),
       velocidade(5.0f),
-      jogador(jogador),
+      dono(don),
       dano(4)
 {
-   Imagem.setColor(sf::Color::Yellow);
+    sprite.setColor(sf::Color::Yellow);
 }
 
 void Projetil::atualizar()
 {
-    Imagem.move(velocidade, 0.0f);
+    sprite.move(velocidade, 0.0f);
 
     desenhar();
 
-    if (Imagem.getPosition().x > 1920.0f)
+    if (sprite.getPosition().x > 1920.0f)
     {
         cout << "sai da tela" << endl;
         velocidade = 0.0f;
-        Imagem.setColor(sf::Color::Transparent);
+        sprite.setColor(sf::Color::Transparent);
     }
 }
 

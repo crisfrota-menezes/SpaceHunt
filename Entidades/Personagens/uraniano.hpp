@@ -2,9 +2,6 @@
 
 #include "inimigo.hpp"
 
-#define TAMANHO_Uraniano_X 50.0f
-#define TAMANHO_Uraniano_Y 90.0f
-
 namespace SpaceHunt
 {
     namespace Entidades
@@ -17,7 +14,7 @@ namespace SpaceHunt
                 void inicializa();
 
             public:
-                Uraniano(const sf::Vector2f pos, Jogador *jogador);
+                Uraniano(const sf::Vector2f pos = sf::Vector2f(0.0,0.0) , Jogador *joga = nullptr);
                 ~Uraniano();
 
             };

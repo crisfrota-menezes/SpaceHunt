@@ -1,7 +1,6 @@
 #include "inimigo.hpp"
 
-Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador, Identidade::IDs ID) : Personagem(pos, tam, VELOCIDADE_INIMIGO, ID), jogador(jogador), dtAux(0.0f)
-{
+Inimigo::Inimigo(const sf::Vector2f pos, Jogador *jogador, Identidade::IDs ID) : Personagem(pos, VELOCIDADE_INIMIGO, ID), jogador(jogador), dtAux(0.0f){
 
 }
 

@@ -19,4 +19,12 @@ void Ente::desenhar(){
     pGrafico->desenhaElemento(sprite);
 }
 
+sf::Sprite* Ente::getSprite(){
+    return &sprite;
+}
+
+const sf::Texture* Ente::getTexture() const{
+    return &textura;
+}
+
 GerenciadorGrafico* SpaceHunt::Ente::pGrafico = nullptr;

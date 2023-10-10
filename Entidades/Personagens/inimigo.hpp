@@ -18,13 +18,13 @@ namespace SpaceHunt
         {
             class Inimigo : public Personagem
             {
-            private:
+            protected:
                 Jogador *jogador;
                 float dtAux;
                 int moveAleatorio;
 
             public:
-                Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador, Identidade::IDs id);
+                Inimigo(const sf::Vector2f pos = sf::Vector2f(0.0,0.0) , Jogador *jogador = nullptr , Identidade::IDs id = Identidade::IDs::vazio);
                 ~Inimigo();
                 virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
                 void atualizar();

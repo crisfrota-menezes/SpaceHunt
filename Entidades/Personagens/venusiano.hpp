@@ -2,9 +2,6 @@
 
 #include "inimigo.hpp"
 
-#define TAMANHO_Venusiano_X 60.0f
-#define TAMANHO_Venusiano_Y 110.0f
-
 namespace SpaceHunt
 {
     namespace Entidades
@@ -17,7 +14,7 @@ namespace SpaceHunt
                 void inicializa();
 
             public:
-                Venusiano(const sf::Vector2f pos, Jogador *jogador);
+                Venusiano(const sf::Vector2f pos = sf::Vector2f(0.0,0.0) , Jogador *joga = nullptr);
                 ~Venusiano();
                 
             };

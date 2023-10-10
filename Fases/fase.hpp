@@ -40,7 +40,7 @@ namespace SpaceHunt {
             Fundo fundo;
             
         public:
-            Fase(const IDs::IDs ID_Fase, const IDs::IDs ID_Fundo);
+            Fase(const Identidade::IDs ID_Fase, const Identidade::IDs ID_Fundo);
             ~Fase();
             void criaUraniano(const sf::Vector2f pos);
             void criaVerme(const sf::Vector2f pos);
@@ -54,6 +54,7 @@ namespace SpaceHunt {
             void criarEntidade(char letra, const sf::Vector2i pos);
             void executar();
             void desenhar();
+            virtual void atualizar() = 0;
             virtual void criarFundo() = 0;
         };
     }
