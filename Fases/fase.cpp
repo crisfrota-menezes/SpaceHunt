@@ -175,7 +175,7 @@ void Fase::desenhar()
     listaObstaculos.executar();
 }
 
-void Fase::atualizar()
+void Fase::executar()
 {
     fundo.atualizar();
 
