@@ -1,9 +1,12 @@
 Alterações 1:
 
-- Na classe Entidade o atributo vida está publico, fazer ele privado e criar funções para trabalhar com esse atributo. ->> Feito. -> Cris
 - O método pular pode ser relativo a Personagem e a gente utiliza ele nas demais classes bases. ->> A Fazer. -> Cris.
+
 - Ente precisa de um método atualizar virtual puro e classes bases tem de ter a implementação. ->> Falta fase. -> Cris
+
 - No gerenciador Gráfico não sei se ele precisa de método e atributo estático visto que é um singleton. ->> Perguntar -> Cris
+
+- Na classe Entidade o atributo vida está publico, fazer ele privado e criar funções para trabalhar com esse atributo. ->> Feito. -> Cris
 - No Gerenciador de Eventos o método verificaTeclaPressionada pode ser utilizado um switch/case. ->>  Feito. -> Cris
 
 
