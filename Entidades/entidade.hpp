@@ -13,9 +13,9 @@ namespace SpaceHunt
             sf::Vector2f pos;
             sf::Vector2f tam;
             int dano;
+            int vida;
 
         public:
-            int vida;
             Entidade(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID);
             ~Entidade();
             const sf::RectangleShape getCorpo();
@@ -26,6 +26,8 @@ namespace SpaceHunt
             virtual void atualizar() = 0;
             void desenhar();
             int getDano();
+            void operator++();
+            void operator--();
         };
     }
     using namespace Entidades;

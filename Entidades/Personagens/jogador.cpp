@@ -61,18 +61,15 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
     case (IDs::IDs::Uraniano):
     {
         cout << "AI" << endl;
-        vida -= outraEntidade->getDano();
         if (vida <= 0)
         {
             cout << "MORTE POR URANIANO" << endl;
-            //delete this;
+            delete this;
             cout << "GAME OVER" << endl;
-            //exit(0);
+            exit(0);
         }
         else
         {
-            // Código que empurra o jogador para trás
-            setPos(sf::Vector2f(pos.x, pos.y - 25.0f));
             noChao = false;
         }
     }
@@ -80,43 +77,55 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
     case (IDs::IDs::Venusiano):
     {
         cout << "AI" << endl;
-        vida -= outraEntidade->getDano();
         if (vida <= 0)
         {
             cout << "MORTE POR VENUSIANO" << endl;
-            //delete this;
+            delete this;
             cout << "GAME OVER" << endl;
-            //exit(0);
+            exit(0);
         }
         else
         {
-            // Código que empurra o jogador para trás
             noChao = false;
-            setPos(sf::Vector2f(pos.x, pos.y - 25.0f)); // Aqui está empurrando pra baixo
         }
     }
     break;
     case (IDs::IDs::Verme):
     {
         cout << "AI" << endl;
-        vida -= outraEntidade->getDano();
         if (vida <= 0)
         {
             cout << "MORTE POR VERME" << endl;
-            //delete this;
+            delete this;
             cout << "GAME OVER" << endl;
-            // exit(0);
+            exit(0);
         }
         else
         {
-            // Código que empurra o jogador para trás
-            setPos(sf::Vector2f(pos.x, pos.y - 25.0f));
             noChao = false;
         }
     }
+    break;
     case (IDs::IDs::plataforma):
     {
     }
+    break;
+    case (IDs::IDs::Rochas):
+    {
+        cout << "AI" << endl;
+        if (vida <= 0)
+        {
+            cout << "MORTE POR ROCHA" << endl;
+            delete this;
+            cout << "GAME OVER" << endl;
+            exit(0);
+        }
+        else
+        {
+            noChao = false;
+        }
+    }
+    break;
     }
 }
 
