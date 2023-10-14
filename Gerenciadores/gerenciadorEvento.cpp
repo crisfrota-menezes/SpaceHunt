@@ -31,32 +31,27 @@ Jogador *GerenciadorEvento::getJogador()
 
 void GerenciadorEvento::verificaTeclaPressionada(sf::Keyboard::Key tecla)
 {
-    if (tecla == sf::Keyboard::A)
+    switch (tecla)
     {
+    case sf::Keyboard::A:
         pJogador->andar(true);
-    }
-    else if (tecla == sf::Keyboard::D)
-    {
+        break;
+    case sf::Keyboard::D:
         pJogador->andar(false);
-    }
-    else if (tecla == sf::Keyboard::W)
-    {
+        break;
+    case sf::Keyboard::W:
         pJogador->pular();
-    }
-    else if (tecla == sf::Keyboard::Up)
-    {
-        pJogador->pular();
-    }
-    else if (tecla == sf::Keyboard::Right)
-    {
-        pJogador->andar(false);
-    }
-    else if (tecla == sf::Keyboard::Left)
-    {
+        break;
+    case sf::Keyboard::Left:
         pJogador->andar(true);
-    }
-    else if (tecla == sf::Keyboard::Escape)
-    {
+        break;
+    case sf::Keyboard::Right:
+        pJogador->andar(false);
+        break;
+    case sf::Keyboard::Up:
+        pJogador->pular();
+        break;
+    case sf::Keyboard::Escape:
         pGrafico->fechaJanela();
     }
 }
