@@ -12,7 +12,7 @@ namespace SpaceHunt
         {
         private:
             ListaEntidades *listaPersonagem;
-            ListaEntidades *listaObsstaculo;
+            ListaEntidades *listaObstaculo;
         public:
             GerenciadorColisao(ListaEntidades *listaPersonagem, ListaEntidades *listaObstaculo);
             ~GerenciadorColisao();

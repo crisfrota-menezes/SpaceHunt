@@ -17,3 +17,14 @@ void Venusiano::inicializa()
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/ParadoA3.png", "PARADO", 8, 0.15f, sf::Vector2f(3, 1.5));
     corpo.setOrigin(tam.x / 3.0f, tam.y / 5.7f);
 }
+
+void Venusiano::colisao(Entidade *outraEnt, sf::Vector2f ds)
+{
+    switch (outraEnt->getID())
+    {
+    case (IDs::IDs::jogador):
+    {
+    }
+    break;
+    }
+}

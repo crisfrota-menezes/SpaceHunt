@@ -1,6 +1,6 @@
 #pragma once
 
-#include "./ente.hpp"
+#include "../ente.hpp"
 
 namespace SpaceHunt
 {
