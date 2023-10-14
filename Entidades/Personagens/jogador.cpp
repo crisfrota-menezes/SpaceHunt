@@ -60,7 +60,6 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
     {
     case (IDs::IDs::Uraniano):
     {
-        cout << "AI" << endl;
         if (vida <= 0)
         {
             cout << "MORTE POR URANIANO" << endl;
@@ -70,13 +69,13 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         }
         else
         {
+            cout << "AI" << endl;
             noChao = false;
         }
     }
     break;
     case (IDs::IDs::Venusiano):
     {
-        cout << "AI" << endl;
         if (vida <= 0)
         {
             cout << "MORTE POR VENUSIANO" << endl;
@@ -86,13 +85,13 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         }
         else
         {
+            cout << "AI" << endl;
             noChao = false;
         }
     }
     break;
     case (IDs::IDs::Verme):
     {
-        cout << "AI" << endl;
         if (vida <= 0)
         {
             cout << "MORTE POR VERME" << endl;
@@ -102,6 +101,7 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         }
         else
         {
+            cout << "AI" << endl;
             noChao = false;
         }
     }
@@ -112,7 +112,6 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
     break;
     case (IDs::IDs::Rochas):
     {
-        cout << "AI" << endl;
         if (vida <= 0)
         {
             cout << "MORTE POR ROCHA" << endl;
@@ -122,6 +121,7 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         }
         else
         {
+            cout << "AI" << endl;
             noChao = false;
         }
     }

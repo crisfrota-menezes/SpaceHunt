@@ -27,7 +27,7 @@ namespace SpaceHunt
             void desenhar();
             int getDano();
             void operator++();
-            void operator--();
+            void operator-(Entidade *outraEnt);
         };
     }
     using namespace Entidades;

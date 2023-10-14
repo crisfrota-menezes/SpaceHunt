@@ -45,7 +45,7 @@ void Entidade::operator++()
     vida++;
 }
 
-void Entidade::operator--()
+void Entidade::operator-(Entidade* outraEnt)
 {
-    vida--;
+    vida = vida - outraEnt->getDano();
 }

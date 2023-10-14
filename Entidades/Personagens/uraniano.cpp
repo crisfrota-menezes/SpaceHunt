@@ -24,7 +24,7 @@ void Uraniano::colisao(Entidade *outraEnt, sf::Vector2f ds)
     {
     case (IDs::IDs::jogador):
     {
-        outraEnt->operator--();
+        outraEnt->operator-(this);
         outraEnt->setPos(sf::Vector2f(outraEnt->getPos().x, outraEnt->getPos().y - 25.0f));
     }
     break;
