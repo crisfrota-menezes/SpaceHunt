@@ -46,7 +46,7 @@ void Jogo::run()
     {
         pEvento->executar();
         pGrafico->limpar();
-        fase->executar();
+        fase->atualizar();
         pGrafico->mostraElementos();
     }
 }
