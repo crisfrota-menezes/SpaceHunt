@@ -32,7 +32,8 @@ namespace SpaceHunt {
 
     namespace Fases {
 
-        class Fase : public Ente {
+        class Fase : public Ente 
+        {
         protected:
             ListaEntidades listaPersonagens;
             ListaEntidades listaObstaculos;
