@@ -1,6 +1,7 @@
 #include "Personagem.hpp"
+#include <cmath>
 
-Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : Entidade(pos, tam, ID), podeMover(false), paraEsquerda(false), relogio(), dt(0.0f), velFinal(sf::Vector2f(vel, 0.0f)), velMax(vel), atacando(false), animacao(&corpo)
+Personagem::Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID) : Entidade(pos, tam, ID), podeMover(false), paraEsquerda(false), relogio(), dt(0.0f), velFinal(sf::Vector2f(vel, 0.0f)), velMax(vel), atacando(false), animacao(&corpo), pulou(false), noChao(false), podepular(false)
 {
 }
 
@@ -72,8 +73,24 @@ void Personagem::animar()
     }
 }
 
-/*bool Personagem::getAtacando()
+void Personagem::pular()
 {
-    atacando = true;
-    return atacando;
-}*/
+    if (podepular)
+    {
+        velFinal.y = -sqrt(2.0f * GRAVIDADE * TAMANHO_PULO);
+        noChao = false;
+        podepular = false;
+        pulou = true;
+    }
+}
+
+void Personagem::podePular()
+{
+    if(noChao)
+        podepular = true;
+}
+
+void Personagem::estaNoChao()
+{
+    noChao = true;
+}

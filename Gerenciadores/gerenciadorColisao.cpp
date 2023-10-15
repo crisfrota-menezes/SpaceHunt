@@ -60,6 +60,7 @@ void GerenciadorColisao::executar()
                 if (ent2->getID() == IDs::IDs::plataforma)
                 {
                     ent2->colisao(ent1, ds);
+                    ent1->colisao(ent2);
                 }
                 else if (ent2->getID() == IDs::IDs::Rochas)
                 {
@@ -69,6 +70,7 @@ void GerenciadorColisao::executar()
                 else if (ent2->getID() == IDs::IDs::Arvore)
                 {
                     ent2->colisao(ent1, ds);
+                    ent1->colisao(ent2);
                 }
             }
         }

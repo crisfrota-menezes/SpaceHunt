@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador), noChao(false)
+Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador)
 {
     vida = 10;
     inicializa();
@@ -32,11 +32,11 @@ void Jogador::atualizar()
 
 void Jogador::animar()
 {
-    if (!noChao && velFinal.y > 0.0f)
+    if (!noChao && !podepular && velFinal.y > 0.0f)
     {
         animacao.atualizar(paraEsquerda, "CAI");
     }
-    else if (!noChao)
+    else if (pulou)
     {
         animacao.atualizar(paraEsquerda, "PULA");
     }
@@ -108,6 +108,13 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
     break;
     case (IDs::IDs::plataforma):
     {
+        if (ds.y <= 0.0f)
+        {
+            estaNoChao();
+            podePular();
+            pulou = false;
+            velFinal.y = 0.0f;
+        }
     }
     break;
     case (IDs::IDs::Rochas):
@@ -127,18 +134,4 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
     }
     break;
     }
-}
-
-void Jogador::pular()
-{
-    if (noChao)
-    {
-        velFinal.y = -sqrt(2.0f * GRAVIDADE * TAMANHO_PULO);
-        noChao = false;
-    }
-}
-
-void Jogador::podePular()
-{
-    noChao = true;
 }

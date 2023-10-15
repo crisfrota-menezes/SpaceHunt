@@ -2,7 +2,7 @@ Alterações 1:
 
 - O método pular pode ser relativo a Personagem e a gente utiliza ele nas demais classes bases. ->> A Fazer. -> Cris.
 
-- Ente precisa de um método atualizar virtual puro e classes bases tem de ter a implementação. ->> Falta fase. -> Cris
+- Ente precisa de um método atualizar virtual puro e classes bases tem de ter a implementação. ->> Erro na fase. -> Cris
 
 - No gerenciador Gráfico não sei se ele precisa de método e atributo estático visto que é um singleton. ->> Perguntar -> Cris
 
