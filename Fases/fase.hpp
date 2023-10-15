@@ -55,6 +55,7 @@ namespace SpaceHunt {
             void criarEntidade(char letra, const sf::Vector2i pos);
             void executar();
             void desenhar();
+            void atualizar();
             virtual void criarFundo() = 0;
         };
     }

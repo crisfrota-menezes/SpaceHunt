@@ -185,3 +185,7 @@ void Fase::executar()
     // verifica colisão
     pColisao->executar();
 }
+
+void Fase::atualizar()
+{
+}
