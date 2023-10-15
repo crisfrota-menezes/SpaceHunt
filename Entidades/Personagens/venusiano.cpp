@@ -2,8 +2,8 @@
 
 Venusiano::Venusiano(const sf::Vector2f pos, Jogador *jogador) : Inimigo(pos, sf::Vector2f(TAMANHO_Venusiano_X, TAMANHO_Venusiano_Y), jogador, IDs::IDs::Venusiano)
 {
-    vida = 4;
-    dano = 2;
+    vida = 3;
+    dano = 3;
     inicializa();
 }
 
@@ -25,7 +25,7 @@ void Venusiano::colisao(Entidade *outraEnt, sf::Vector2f ds)
     case (IDs::IDs::jogador):
     {
         outraEnt->operator-(this);
-        outraEnt->setPos(sf::Vector2f(outraEnt->getPos().x, outraEnt->getPos().y - 25.0f));
+        outraEnt->setPos(sf::Vector2f(outraEnt->getPos().x - 25.0f, outraEnt->getPos().y - 25.0f));
     }
     break;
     }

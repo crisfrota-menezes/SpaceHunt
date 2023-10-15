@@ -3,7 +3,7 @@
 Uraniano::Uraniano(const sf::Vector2f pos, Jogador *jogador) : Inimigo(pos, sf::Vector2f(TAMANHO_Uraniano_X, TAMANHO_Uraniano_Y), jogador, IDs::IDs::Uraniano)
 {
     vida = 2;
-    dano = 1;
+    dano = 2;
     inicializa();
 }
 
@@ -25,7 +25,7 @@ void Uraniano::colisao(Entidade *outraEnt, sf::Vector2f ds)
     case (IDs::IDs::jogador):
     {
         outraEnt->operator-(this);
-        outraEnt->setPos(sf::Vector2f(outraEnt->getPos().x, outraEnt->getPos().y - 25.0f));
+        outraEnt->setPos(sf::Vector2f(outraEnt->getPos().x - 25.0f, outraEnt->getPos().y - 25.0f));
     }
     break;
     }

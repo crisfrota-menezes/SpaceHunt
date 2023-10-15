@@ -17,7 +17,7 @@ void Rochas::colisao(Entidade *outraEnt, sf::Vector2f ds)
     if (outraEnt->getID() == IDs::IDs::jogador)
     {
         outraEnt->operator-(this);
-        outraEnt->setPos(sf::Vector2f(posOutro.x, posOutro.y - 50.0f));
+        outraEnt->setPos(sf::Vector2f(posOutro.x - 50.0f, posOutro.y - 50.0f));
         colisaoObstaculo(ds, static_cast<Personagem *>(outraEnt));
     }
     else if (outraEnt->getID() == IDs::IDs::Uraniano || outraEnt->getID() == IDs::IDs::Verme || outraEnt->getID() == IDs::IDs::Venusiano)
