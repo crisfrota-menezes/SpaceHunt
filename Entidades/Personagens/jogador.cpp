@@ -133,5 +133,15 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         }
     }
     break;
+    case (IDs::IDs::Arvore):
+    {
+        if (ds.y <= 0.0f)
+        {
+            estaNoChao();
+            podePular();
+            pulou = false;
+            velFinal.y = 0.0f;
+        }
     }
-}
+    break;
+    }
