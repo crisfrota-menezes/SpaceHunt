@@ -145,3 +145,4 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
     }
     break;
     }
+}
