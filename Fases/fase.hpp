@@ -32,7 +32,8 @@ namespace SpaceHunt {
 
     namespace Fases {
 
-        class Fase : public Ente {
+        class Fase : public Ente 
+        {
         protected:
             ListaEntidades listaPersonagens;
             ListaEntidades listaObstaculos;
@@ -54,6 +55,7 @@ namespace SpaceHunt {
             void criarEntidade(char letra, const sf::Vector2i pos);
             void executar();
             void desenhar();
+            void atualizar();
             virtual void criarFundo() = 0;
         };
     }

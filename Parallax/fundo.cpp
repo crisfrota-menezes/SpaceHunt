@@ -17,7 +17,7 @@ Fundo::~Fundo(){
     camadas.clear();
 }
 
-void Fundo::executar(){
+void Fundo::atualizar(){
     sf::Vector2f posCamera = pGrafico->getCamera().getCenter();
     sf::Vector2f ds = posCamera - posAnteriorCamera;
     posAnteriorCamera = posCamera;

@@ -4,6 +4,7 @@
 #include "../../Animacao/animacao.hpp"
 
 #define GRAVIDADE 1.0f
+#define TAMANHO_PULO 0.8f
 
 namespace SpaceHunt
 {
@@ -22,6 +23,9 @@ namespace SpaceHunt
                 sf::Clock relogio;
                 float dt;
                 Animacao animacao;
+                bool noChao;
+                bool podepular;
+                bool pulou;
 
             public:
                 Personagem(const sf::Vector2f pos, const sf::Vector2f tam, const float vel, const IDs::IDs ID);
@@ -30,6 +34,9 @@ namespace SpaceHunt
                 const sf::Vector2f getVelFinal() const;
                 void andar(const bool paraEsquerda);
                 void parar();
+                void pular();
+                void podePular();
+                void estaNoChao();
                 void atualizarPos();
                 virtual void animar();
                 virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;

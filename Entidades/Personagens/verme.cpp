@@ -17,3 +17,16 @@ void Verme::inicializa()
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/ParadoA2.png", "PARADO", 4, 0.20f, sf::Vector2f(3, 1.5));
     corpo.setOrigin(tam.x / 3.0f, tam.y / 5.2f);
 }
+
+void Verme::colisao(Entidade *outraEnt, sf::Vector2f ds)
+{
+    switch (outraEnt->getID())
+    {
+    case (IDs::IDs::jogador):
+    {
+        outraEnt->operator-(this);
+        outraEnt->setPos(sf::Vector2f(outraEnt->getPos().x, outraEnt->getPos().y - 25.0f));
+    }
+    break;
+    }
+}

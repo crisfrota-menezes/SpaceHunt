@@ -39,3 +39,13 @@ int Entidade::getDano()
 {
     return dano;
 }
+
+void Entidade::operator++()
+{
+    vida++;
+}
+
+void Entidade::operator-(Entidade* outraEnt)
+{
+    vida = vida - outraEnt->getDano();
+}

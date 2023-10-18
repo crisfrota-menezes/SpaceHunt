@@ -19,6 +19,7 @@ namespace SpaceHunt
             public:
                 Uraniano(const sf::Vector2f pos, Jogador *jogador);
                 ~Uraniano();
+                void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
 
             };
         }

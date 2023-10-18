@@ -43,6 +43,7 @@ void GerenciadorColisao::executar()
             if (ds.x < 0.0f && ds.y < 0.0f)
             {
                 ent1->colisao(ent2);
+                ent2->colisao(ent1);
             }
         }
     }
@@ -59,14 +60,17 @@ void GerenciadorColisao::executar()
                 if (ent2->getID() == IDs::IDs::plataforma)
                 {
                     ent2->colisao(ent1, ds);
+                    ent1->colisao(ent2);
                 }
                 else if (ent2->getID() == IDs::IDs::Rochas)
                 {
                     ent2->colisao(ent1, ds);
+                    ent1->colisao(ent2);
                 }
                 else if (ent2->getID() == IDs::IDs::Arvore)
                 {
                     ent2->colisao(ent1, ds);
+                    ent1->colisao(ent2);
                 }
             }
         }

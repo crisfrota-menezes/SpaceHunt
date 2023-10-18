@@ -15,6 +15,7 @@ namespace SpaceHunt
             ~Marte();
             void criarMapa();
             void criarFundo();
+            void atualizar();
         };
     }
     using namespace Fases;

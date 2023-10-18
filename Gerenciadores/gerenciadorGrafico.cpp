@@ -25,8 +25,12 @@ GerenciadorGrafico *GerenciadorGrafico::getGerenciadorGrafico()
     if (pGrafico == nullptr)
     {
         pGrafico = new GerenciadorGrafico();
+        return pGrafico;
     }
-    return pGrafico;
+    else
+    {
+        return pGrafico;
+    }
 }
 
 sf::RenderWindow *GerenciadorGrafico::getWindow()
@@ -38,7 +42,7 @@ void GerenciadorGrafico::limpar()
 {
     window->clear();
 }
-    
+
 void GerenciadorGrafico::desenhaElemento(sf::RectangleShape corpo)
 {
     window->draw(corpo);

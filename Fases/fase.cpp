@@ -177,11 +177,15 @@ void Fase::desenhar()
 
 void Fase::executar()
 {
-    fundo.executar();
+    fundo.atualizar();
 
     // atualiza entidade e desenha
     desenhar();
 
     // verifica colisão
     pColisao->executar();
+}
+
+void Fase::atualizar()
+{
 }
