@@ -69,17 +69,17 @@ void GerenciadorEvento::executar()
     sf::Event evento;
     while (pGrafico->getWindow()->pollEvent(evento))
     {
-        if (evento.type == sf::Event::Closed)
+        switch (evento.type)
         {
+        case sf::Event::Closed:
             pGrafico->fechaJanela();
-        }
-        else if (evento.type == sf::Event::KeyPressed)
-        {
+            break;
+        case sf::Event::KeyPressed:
             verificaTeclaPressionada(evento.key.code);
-        }
-        else if (evento.type == sf::Event::KeyReleased)
-        {
+            break;
+        case sf::Event::KeyReleased:
             verificaTeclaSolta(evento.key.code);
+            break;
         }
     }
 }
