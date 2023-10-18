@@ -25,7 +25,7 @@ void Venusiano::colisao(Entidade *outraEnt, sf::Vector2f ds)
     case (IDs::IDs::jogador):
     {
         outraEnt->operator-(this);
-        outraEnt->setPos(sf::Vector2f(outraEnt->getPos().x - 25.0f, outraEnt->getPos().y - 25.0f));
+        outraEnt->setPos(sf::Vector2f(outraEnt->getPos().x, outraEnt->getPos().y - 25.0f));
     }
     break;
     }
