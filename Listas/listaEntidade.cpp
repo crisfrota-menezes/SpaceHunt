@@ -1,55 +1,55 @@
 #include "listaEntidade.hpp"
 
-ListaEntidades::ListaEntidades() : lista()
-{
+ListaEntidades::ListaEntidades() : lista(){
+    limpar();
 }
 
-ListaEntidades::~ListaEntidades()
-{
+ListaEntidades::~ListaEntidades(){
+    limpar();
 }
 
 void ListaEntidades::inserir(Entidade *ent)
 {
-    lista.inserir(ent);
+    lista.InserirElemento(ent);
 }
 
 void ListaEntidades::remover(int pos)
 {
-    lista.remover(pos);
+    lista.RemoverElemento(pos);
 }
 
 void ListaEntidades::remover(Entidade *ent)
 {
-    lista.remover(ent);
+    lista.RemoverElemento(ent);
 }
 
-Entidade *ListaEntidades::operator[](int pos)
-{
+Entidade* ListaEntidades::operator[](int pos){
     return lista.operator[](pos);
 }
 
-int ListaEntidades::getTam()
-{
-    return lista.getTam();
-}
-
-bool ListaEntidades::vazia()
-{
-    return lista.vazia();
-}
-
-void ListaEntidades::executar()
-{
-    int tam = lista.getTam();
+void ListaEntidades::executar(){
+    int tam = lista.getTamanho();
     Entidade *aux = nullptr;
     for (int i = 0; i < tam; i++)
     {
         aux = lista.operator[](i);
-        aux->atualizar();
+        aux->executar();
     }
 }
 
-void ListaEntidades::limpar()
-{
-    lista.limpar();
+void ListaEntidades::limpar(){
+    lista.LimpaLista();
+}
+
+const int ListaEntidades::getTamanho() const{
+    return lista.getTamanho();
+}
+
+void ListaEntidades::inicializar(){
+    Entidade* aux = nullptr;
+
+    for(int i = 0; i < lista.getTamanho();i++){
+        aux = lista.operator[](i);
+        aux->inicializar();
+    }
 }

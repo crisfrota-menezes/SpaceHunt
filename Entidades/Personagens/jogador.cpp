@@ -2,37 +2,40 @@
 
 #include <cmath>
 
-Jogador::Jogador(const sf::Vector2f pos, const sf::Vector2f tam) : Personagem(pos, tam, VELOCIDADE_JOGADOR, IDs::IDs::jogador)
+
+Jogador::Jogador(const sf::Vector2f pos) : Personagem(pos, VELOCIDADE_JOGADOR, Identidade::IDs::jogador), noChao(false)
 {
     vida = 10;
-    inicializa();
 }
 
 Jogador::~Jogador()
 {
 }
 
-void Jogador::inicializa()
-{
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AndaJ.png", "ANDA", 3, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/ParadoJ.png", "PARADO", 10, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/PulaJ.png", "PULA", 8, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/CaiJ.png", "CAI", 1, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AtacaJ.png", "ATACA", 4, 0.15f, sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/HitJ.png", "HIT", 3, 0.15f, sf::Vector2f(3, 1.5));
-    corpo.setOrigin(sf::Vector2f(tam.x / 2.0f, tam.y / 5.8f));
+void Jogador::inicializar(){
+
+    SetSprite();
+  //  animacao.addAnimacao("ANDA", sf::Vector2f(0, 1.5));
+  //  animacao.addAnimacao("PARADO", sf::Vector2f(tam_text, 1.5));
+    //animacao.addAnimacao("PULA", sf::Vector2f(3, 1.5));
+    //animacao.addAnimacao("CAI", sf::Vector2f(3, 1.5));
+    //animacao.addAnimacao("ATACA", sf::Vector2f(3, 1.5));
+    //animacao.addAnimacao("HIT", sf::Vector2f(3, 1.5));
+    //sprite.setOrigin(sf::Vector2f(sprite.getTextureRect().width / 2.0f, sprite.getTextureRect().height / 5.8f));
+    sprite.setPosition(100.0,100.0);
 }
 
-void Jogador::atualizar()
+void Jogador::executar()
 {
-    atualizarPos();
-    animar();
-    pGrafico->atualizarCamera(pos);
+  //  atualizarPos();
+   // animar();
+    desenhar();
+   // pGrafico->atualizarCamera(sprite.getPosition());
 }
 
 void Jogador::animar()
 {
-    if (!noChao && !podepular && velFinal.y > 0.0f)
+    if (!noChao && velocidade.y > 0.0f)
     {
         animacao.atualizar(paraEsquerda, "CAI");
     }
@@ -58,7 +61,7 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 {
     switch (outraEntidade->getID())
     {
-    case (IDs::IDs::Uraniano):
+    case (Identidade::IDs::Uraniano):
     {
         if (vida <= 0)
         {
@@ -69,12 +72,13 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         }
         else
         {
-            cout << "AI" << endl;
+            // Código que empurra o jogador para trás
+            setPos(sf::Vector2f(sprite.getPosition().x, sprite.getPosition().y - 25.0f));
             noChao = false;
         }
     }
     break;
-    case (IDs::IDs::Venusiano):
+    case (Identidade::IDs::Venusiano):
     {
         if (vida <= 0)
         {
@@ -87,10 +91,12 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         {
             cout << "AI" << endl;
             noChao = false;
+            setPos(sf::Vector2f(sprite.getPosition().x, sprite.getPosition().y - 25.0f)); // Aqui está empurrando pra baixo
+
         }
     }
     break;
-    case (IDs::IDs::Verme):
+    case (Identidade::IDs::Verme):
     {
         if (vida <= 0)
         {
@@ -101,12 +107,13 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
         }
         else
         {
-            cout << "AI" << endl;
+
+            // Código que empurra o jogador para trás
+            setPos(sf::Vector2f(sprite.getPosition().x, sprite.getPosition().y - 25.0f));
             noChao = false;
         }
     }
-    break;
-    case (IDs::IDs::plataforma):
+    case (Identidade::IDs::plataforma):
     {
         if (ds.y <= 0.0f)
         {
@@ -135,14 +142,15 @@ void Jogador::colisao(Entidade *outraEntidade, sf::Vector2f ds)
     break;
     case (IDs::IDs::Arvore):
     {
-        if (ds.y <= 0.0f)
-        {
-            estaNoChao();
-            podePular();
-            pulou = false;
-            velFinal.y = 0.0f;
-        }
-    }
-    break;
+
+        velocidade.y = -sqrt(2.0f * GRAVIDADE * TAMANHO_PULO);
+        noChao = false;
     }
 }
+
+void Jogador::podePular()
+{
+    noChao = true;
+}
+
+bool Jogador::Jogador2 = false;

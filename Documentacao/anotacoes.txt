@@ -1,10 +1,15 @@
 Alterações 1:
 
-- Na classe Ente fazer o Gerenciador Gráfico ser estático(talvez até const) pois existirá apenas um. ->> A Fazer. -> Ricardo
-- As classes precisam ter uma construtora sem parametros(aqui da pra por apenas valores default). ->> A Fazer. -> Ricardo.
-- Rever movimentação dos personagens. ->> A Fazer. -> Ricardo.
+
+
+- Na classe Entidade o atributo vida está publico, fazer ele privado e criar funções para trabalhar com esse atributo. ->> Meio feito. -> Cris
+- O método pular pode ser relativo a Personagem e a gente utiliza ele nas demais classes bases. ->> A Fazer. -> Cris.
+- Ente precisa de um método atualizar virtual puro e classes bases tem de ter a implementação. ->> A Fazer. -> Cris 
+- No gerenciador Gráfico não sei se ele precisa de método e atributo estático visto que é um singleton. ->> A verificar -> Cris
+- No Gerenciado de Eventos o método verificaTeclaPressionada pode ser utilizado um switch/case. ->>  A Fazer. -> Cris
+
+- Rever movimentação dos personagens. ->> pronto mas aguarda reunião. -> Ricardo.
 - Em inimigo é bom continuar com o método colisao virtual e definir ele nas classes bases. ->> Meio feito. -> Ricardo.
-- É bom as Entidades terem um atributo tamanho mas é melhor a gente atrelar ele ao tamanho que o SFML nos dá. ->> A Fazer. -> Ricardo
 
 
 

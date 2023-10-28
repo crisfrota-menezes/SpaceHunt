@@ -2,9 +2,6 @@
 
 #include "inimigo.hpp"
 
-#define TAMANHO_Verme_X 50.0f
-#define TAMANHO_Verme_Y 90.0f
-
 namespace SpaceHunt
 {
     namespace Entidades
@@ -17,9 +14,10 @@ namespace SpaceHunt
                 void inicializa();
 
             public:
-                Verme(const sf::Vector2f pos, Jogador *jogador);
+                Verme(const sf::Vector2f pos = sf::Vector2f(0.0,0.0) , Jogador *joga = nullptr);
                 ~Verme();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
+                void executar();
             };
         }
         using namespace Personagens;

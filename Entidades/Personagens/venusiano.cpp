@@ -1,21 +1,21 @@
 #include "venusiano.hpp"
 
-Venusiano::Venusiano(const sf::Vector2f pos, Jogador *jogador) : Inimigo(pos, sf::Vector2f(TAMANHO_Venusiano_X, TAMANHO_Venusiano_Y), jogador, IDs::IDs::Venusiano)
+Venusiano::Venusiano(const sf::Vector2f pos, Jogador *joga) : Inimigo(pos, joga, Identidade::IDs::Venusiano)
 {
     vida = 3;
     dano = 3;
     inicializa();
 }
 
-Venusiano::~Venusiano()
-{
+Venusiano::~Venusiano(){
+    jogador = nullptr;
 }
 
 void Venusiano::inicializa()
 {
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AndaA3.png", "ANDA", 8, 0.15f, sf::Vector2f(3, 1.5));
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/ParadoA3.png", "PARADO", 8, 0.15f, sf::Vector2f(3, 1.5));
-    corpo.setOrigin(tam.x / 3.0f, tam.y / 5.7f);
+    sprite.setOrigin(sprite.getTexture()->getSize().x / 3.0f, sprite.getTexture()->getSize().y / 5.7f);
 }
 
 void Venusiano::colisao(Entidade *outraEnt, sf::Vector2f ds)
@@ -29,4 +29,9 @@ void Venusiano::colisao(Entidade *outraEnt, sf::Vector2f ds)
     }
     break;
     }
+
+   
+}
+
+void Venusiano::executar(){
 }

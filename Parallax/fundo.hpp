@@ -16,7 +16,7 @@ namespace SpaceHunt
             std::vector<Camada *> camadas;
 
         public:
-            Fundo(const IDs::IDs ID);
+            Fundo(const Identidade::IDs ID);
             ~Fundo();
             void desenhar();
             void addCamada(const char *caminhoTextura, const float vel);

@@ -1,6 +1,7 @@
 #pragma once
 
-#include <C:\Users\crisn\Downloads\jogo_cristiano_frota_S73\SpaceHunt\SFML\include\SFML\Graphics.hpp>
+
+#include "SFML/Graphics.hpp"
 #include <iostream>
 
 #include "IDs.hpp"
@@ -11,15 +12,24 @@ namespace SpaceHunt
     class Ente
     {
     protected:
-        GerenciadorGrafico *pGrafico;
-        const IDs::IDs ID;
+
+        static GerenciadorGrafico* pGrafico;
+        const Identidade::IDs identificador;
+        sf::Sprite sprite;
+        sf::Texture textura;
 
     public:
-        Ente(const IDs::IDs ID);
-        ~Ente();
-        const IDs::IDs getID() const;
-        virtual void desenhar() = 0;
-        virtual void atualizar() = 0;
+        Ente(const Identidade::IDs id = Identidade::IDs::vazio);
+        virtual ~Ente();
+        const Identidade::IDs getID() const;
+        virtual void desenhar();
+        virtual void executar() = 0;
+        void setGGrafico(GerenciadorGrafico* pGrafico);
+        const sf::Texture* getTexture() const;
+        void SetSprite();
+        sf::Sprite* getSprite();
+        virtual void inicializar();
+
     };
 }
 using namespace SpaceHunt;

@@ -1,161 +1,162 @@
 #pragma once
+#include <iostream>
+using namespace std;
 
-#include "elemento.hpp"
+namespace SpaceHunt{
+	namespace Listas {
+		template<class TL>class Lista {
+		public:
+			template<class TE>class Elemento {// Classe Elemento aninhada na classe Lista
+			private:
+				Elemento<TE>* pProx;
+				TE* pInfo;
+			public:
 
-namespace SpaceHunt
-{
-    namespace Listas
-    {
-        template <class TL>
-        class Lista
-        {
-        private:
-            Elemento<TL> *inicio;
-            Elemento<TL> *ultimo;
-            unsigned int tam;
+				Elemento() {
+					pProx = nullptr;	pInfo = nullptr;
+				}
+				~Elemento() {
+					pProx = nullptr;	delete pInfo;	pInfo = nullptr;
+				}
 
-        public:
-            Lista();
-            ~Lista();
-            void inserir(TL *elemento);
-            void remover(int pos);
-            void remover(TL *elemento);
-            TL *operator[](int pos);
-            void limpar();
-            int getTam();
-            bool vazia();
-        };
+				Elemento<TE>* getProx() {
+					return pProx;
+				}
+				void setProx(Elemento<TE>* Prox) {
+					if (Prox != nullptr) {
+						pProx = Prox;
+					}
+				}
+				TE* getInfo() {
+					return pInfo;
+				}
 
-        template <class TL>
-        Lista<TL>::Lista() : inicio(nullptr),
-                             ultimo(nullptr),
-                             tam(0)
-        {
-        }
+				void setInfo(TE* info) {
+					if (info != nullptr) {
+						pInfo = info;
+					}
+				}
+			};
+		private:
+			Elemento<TL>* pPrimeiro;
+			Elemento<TL>* pAtual;
+			int tamanho;
+		public:
 
-        template <class TL>
-        Lista<TL>::~Lista()
-        {
-            limpar();
-        }
+			Lista();
+			~Lista();
 
-        template <class TL>
-        void Lista<TL>::inserir(TL *elemento)
-        {
-            if (elemento == nullptr)
-            {
-                std::cout << "ERROR::Lista elemento eh nullptr" << std::endl;
-                exit(1);
-            }
-            Elemento<TL> *novo = new Elemento<TL>();
-            novo->setElemento(elemento);
-            if (novo == nullptr)
-            {
-                std::cout << "ERROR::Lista aux eh nullptr" << std::endl;
-                exit(1);
-            }
-            novo->setElemento(elemento);
-            if (this->inicio == nullptr)
-            {
-                this->inicio = novo;
-                this->ultimo = novo;
-            }
-            else
-            {
-                this->ultimo->setProximo(novo);
-                this->ultimo = novo;
-            }
-            this->tam++;
-        }
+			bool InserirElemento(TL* Elemento);
 
-        template <class TL>
-        void Lista<TL>::remover(int pos)
-        {
-            TL *elemento = operator[](pos);
-            return remover(elemento);
-        }
+			Elemento<TL>* getPrimeiro() {
+				return pPrimeiro;
+			}
 
-        template <class TL>
-        void Lista<TL>::remover(TL *elemento)
-        {
-            if (elemento == nullptr)
-            {
-                std::cout << "ERROR::Lista elemento eh nullptr" << std::endl;
-                exit(1);
-            }
-            Elemento<TL> *aux = inicio;
-            Elemento<TL> *aux2 = nullptr;
-            while (aux != nullptr && aux->getElemento() != elemento)
-            {
-                aux2 = aux;
-                aux = aux->getProximo();
-            }
-            if (aux->getElemento() == elemento)
-            {
-                if (aux == inicio)
-                {
-                    inicio = aux->getProximo();
-                }
-                else if (aux == ultimo)
-                {
-                    ultimo = aux2;
-                }
-                else
-                {
-                    aux2->setProximo(aux->getProximo());
-                }
-                tam--;
-                delete (aux);
-                aux = nullptr;
-                aux2 = nullptr;
-            }
-        }
+			Elemento<TL>* getAtual() {
+				return pAtual;
+			}
 
-        template <class TL>
-        TL *Lista<TL>::operator[](int pos)
-        {
-            if (pos >= (int)tam || pos < 0)
-            {
-                std::cout << "ERROR::Lista pos eh maior que o tamanho da lista" << std::endl;
-                exit(1);
-            }
-            Elemento<TL> *aux = inicio;
-            for (int i = 0; i < pos; i++)
-            {
-                aux = aux->getProximo();
-            }
-            return aux->getElemento();
-        }
+			TL* operator[](int Pos){
+				Elemento<TL>* pAux = pPrimeiro;
 
-        template <class TL>
-        void Lista<TL>::limpar()
-        {
-            Elemento<TL> *aux = inicio;
-            Elemento<TL> *aux2 = nullptr;
-            while (aux != nullptr)
-            {
-                aux2 = aux;
-                aux = aux->getProximo();
-                delete (aux2);
-                aux2 = nullptr;
-            }
-            inicio = nullptr;
-            ultimo = nullptr;
-            tam = 0;
-        }
+				for(int i = 0; i < Pos; i++){
+					pAux = pAux->getProx();
+				}
+				return pAux->getInfo();
+			}
 
-        template <class TL>
-        int Lista<TL>::getTam()
-        {
-            return (int)tam;
-        }
+			bool RemoverElemento(TL* Elemen) {
+			
+				if (Elemen == nullptr) {
+					cout << "Erro na remocao, Elemento invalido" << endl;
+					return false;
+				}
 
-        template <class TL>
-        bool Lista<TL>::vazia()
-        {
-            return tam == 0;
-        }
-    }
-    using namespace Listas;
+				if (pPrimeiro->getInfo() == Elemen) { // Remocao para caso o elemento a ser retirado coincida com primeiro.
+					pPrimeiro = pPrimeiro->getProx();
+					cout << "Elemento removido da Lista.h com sucesso" << endl;
+					tamanho--;
+					return true;
+				}
+
+				Elemento<TL>* pAux = pPrimeiro;
+				Elemento<TL>* pAux2 = nullptr;
+				while (pAux != pAtual) {
+					pAux2 = pAux->getProx();
+					if (pAux2->getInfo() == Elemen) {
+						pAux->setProx(pAux2->getProx());
+						if (pAux2 == pAtual) { // Remo��o para caso o elemento a ser retirado coincida com o Ultimo.
+							pAtual = pAux;
+						}
+						delete pAux2;
+						tamanho--;
+						return true;
+						cout << "Elemento removido da Lista.h com sucesso" << endl;
+					}
+					pAux = pAux->getProx();
+				}
+			}
+
+			const int getTamanho() const{
+				return tamanho;
+			}
+
+			bool RemoverElemento(int pos){
+				Entidade* paux = operator[](pos);
+				return RemoverElemento(paux);
+			}
+
+			void LimpaLista();
+		};
+
+		template<class TL>
+		inline Lista<TL>::Lista():tamanho(0) {
+			pPrimeiro = nullptr;
+			pAtual = nullptr;
+		}
+
+		template<class TL>
+		inline Lista<TL>::~Lista() {
+			LimpaLista();
+		}
+
+		template<class TL>
+		inline bool Lista<TL>::InserirElemento(TL* Elemen) {
+
+			if (Elemen != nullptr) {
+
+				Elemento<TL>* pAux = new Elemento<TL>;	pAux->setInfo(Elemen);
+
+				if (pPrimeiro == nullptr && pAtual == nullptr) {
+					pPrimeiro = pAux;	pAtual = pAux;
+					tamanho++;
+					return true;
+				}
+				else {
+					pAtual->setProx(pAux);
+					pAtual = pAux;
+					tamanho++;
+					return true;
+				}
+
+			}
+			else {
+				cout << "Elemento Invalido" << endl;
+				return false;
+			}
+		}
+
+		template<class TL>
+		inline void Lista<TL>::LimpaLista() {
+			Elemento<TL>* aux = nullptr;
+
+			while (pPrimeiro != nullptr) {
+				aux = pPrimeiro->getProx();
+				delete pPrimeiro;
+				pPrimeiro = aux;
+			}
+		}
+	}
+
+
 }
-using namespace SpaceHunt;

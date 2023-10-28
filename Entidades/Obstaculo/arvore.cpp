@@ -1,7 +1,6 @@
 #include "arvore.hpp"
 
-Arvore::Arvore(sf::Vector2f pos, sf::Vector2f tam) : Obstaculo(pos, tam, IDs::IDs::Arvore, CAMINHO_TEXTURA_Arvore), flexibilidade(0.25f)
-{
+Arvore::Arvore(sf::Vector2f pos): Obstaculo(pos, Identidade::IDs::Arvore), flexibilidade(0.25f){
 }
 
 Arvore::~Arvore()
@@ -11,9 +10,9 @@ Arvore::~Arvore()
 void Arvore::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 {
     sf::Vector2f posOutro = outraEntidade->getPos();
-    sf::Vector2f tamOutro = outraEntidade->getTam();
+    sf::Vector2i tamOutro = outraEntidade->getSprite()->getTextureRect().getSize();
 
-    if (outraEntidade->getID() == IDs::IDs::jogador || outraEntidade->getID() == IDs::IDs::Uraniano || outraEntidade->getID() == IDs::IDs::Venusiano || outraEntidade->getID() == IDs::IDs::Verme)
+    if (outraEntidade->getID() == Identidade::IDs::jogador || outraEntidade->getID() == Identidade::IDs::Uraniano || outraEntidade->getID() == Identidade::IDs::Venusiano || outraEntidade->getID() == Identidade::IDs::Verme)
     {
         colisaoObstaculo(ds, static_cast<Personagem *>(outraEntidade));
     }
@@ -22,28 +21,28 @@ void Arvore::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 void Arvore::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
 {
     sf::Vector2f posOutro = pPersonagem->getPos();
-    sf::Vector2f tamOutro = pPersonagem->getTam();
-    sf::Vector2f velFinal = pPersonagem->getVelFinal();
+    sf::Vector2i tamOutro = pPersonagem->getSprite()->getTextureRect().getSize();
+    sf::Vector2f velFinal = pPersonagem->getVelocidade();
     if (ds.x < 0.0f && ds.y < 0.0f)
     { // houve colisao
         if (ds.x > ds.y)
         {
-            if (pPersonagem->getID() == IDs::IDs::jogador)
+            if (pPersonagem->getID() == Identidade::IDs::jogador)
             {
                 velFinal.x *= flexibilidade;
-                if (posOutro.x < pos.x)
+                if (posOutro.x < sprite.getPosition().x)
                 { // colisão em x
-                    pos.x -= ds.x;
+                    //sprite.getPosition().x -= ds.x;
                 }
                 else
                 {
-                    pos.x += ds.x;
+                    //pos.x += ds.x;
                 }
-                setPos(pos);
+              //  setPos(pos);
             }
             else
             {
-                if (posOutro.x < pos.x)
+                if (posOutro.x < sprite.getPosition().x)
                 { // colisão em x
                     posOutro.x += ds.x;
                 }
@@ -55,10 +54,10 @@ void Arvore::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
         }
         else
         {
-            if (posOutro.y < pos.y)
+            if (posOutro.y < sprite.getPosition().y)
             { // colisão em y
                 posOutro.y += ds.y;
-                if (pPersonagem->getID() == IDs::IDs::jogador)
+                if (pPersonagem->getID() == Identidade::IDs::jogador)
                 {
                     Jogador *pJogador = static_cast<Jogador *>(pPersonagem);
                     pJogador->podePular();
@@ -72,5 +71,9 @@ void Arvore::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
         }
     }
     pPersonagem->setPos(posOutro);
-    pPersonagem->setVelFinal(velFinal);
+    pPersonagem->setVelocidade(velFinal);
+}
+
+void Arvore::executar(){
+    
 }
