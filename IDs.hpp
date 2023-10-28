@@ -2,7 +2,7 @@
 
 namespace SpaceHunt
 {
-    namespace IDs
+    namespace Identidade
     {
         enum class IDs
         {
@@ -21,6 +21,6 @@ namespace SpaceHunt
             Projetil
         };
     }
-    using namespace IDs;
+    using namespace Identidade;
 }
 using namespace SpaceHunt;

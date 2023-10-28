@@ -1,11 +1,11 @@
 #include "fase.hpp"
 
-Fase::Fase(const IDs::IDs ID_Fase, const IDs::IDs ID_Fundo) : Ente(ID_Fase),
-                                                              fundo(ID_Fundo),
+Fase::Fase(const Identidade::IDs ID_Fase, const Identidade::IDs ID_Fundo) : Ente(ID_Fase),
+                                                             // fundo(ID_Fundo),
                                                               listaPersonagens(),
                                                               listaObstaculos(),
-                                                              pColisao(new GerenciadorColisao(&listaPersonagens, &listaObstaculos))
-{
+                                                              pColisao(new GerenciadorColisao(&listaPersonagens, &listaObstaculos)){
+
     if (pColisao == nullptr)
     {
         std::cout << "nao foi possivel criar um Gerenciador de Colisao" << std::endl;
@@ -20,41 +20,39 @@ Fase::~Fase()
         delete (pColisao);
         pColisao = nullptr;
     }
-    listaObstaculos.limpar();
-    listaPersonagens.limpar();
 }
 
 void Fase::criarPlataforma(const sf::Vector2f pos)
 {
-    Plataforma *plataforma = new Plataforma(pos, sf::Vector2f(150.0f, 130.0f));
+    Plataforma *plataforma = new Plataforma(pos);
     if (plataforma == nullptr)
     {
         std::cout << "nao foi possivel criar uma plataforma" << std::endl;
         exit(1);
     }
-    listaObstaculos.inserir(static_cast<Entidade *>(plataforma));
+    listaObstaculos.inserir(static_cast<Entidade*>(plataforma));
 }
 
 void Fase::criarArvore(const sf::Vector2f pos)
 {
-    Arvore *arvore = new Arvore(pos, sf::Vector2f(200.0f, 200.0f));
+    Arvore* arvore = new Arvore(pos);
     if (arvore == nullptr)
     {
         std::cout << "nao foi possivel criar uma Arvore" << std::endl;
         exit(1);
     }
-    listaObstaculos.inserir(static_cast<Entidade *>(arvore));
+    listaObstaculos.inserir(static_cast<Entidade*>(arvore));
 }
 
 void Fase::criarRochas(const sf::Vector2f pos)
 {
-    Rochas *rochas = new Rochas(pos, sf::Vector2f(100.0f, 100.0f));
+    Rochas* rochas = new Rochas(pos);
     if (rochas == nullptr)
     {
         std::cout << "nao foi possivel criar uma Rochas" << std::endl;
         exit(1);
     }
-    listaObstaculos.inserir(static_cast<Entidade *>(rochas));
+    listaObstaculos.inserir(static_cast<Entidade*>(rochas));
 }
 
 void Fase::criaUraniano(const sf::Vector2f pos)
@@ -98,7 +96,7 @@ void Fase::criaVenusiano(const sf::Vector2f pos)
 
 void Fase::criarJogador(const sf::Vector2f pos)
 {
-    Jogador *jogador = new Jogador(pos, sf::Vector2f(50.0f, 90.0f));
+    Jogador *jogador = new Jogador(pos);
     if (jogador == nullptr)
     {
         std::cout << "nao foi possivel criar um Jogador" << std::endl;
@@ -169,23 +167,17 @@ void Fase::criarEntidade(char letra, const sf::Vector2i pos)
     }
 }
 
-void Fase::desenhar()
-{
-    listaPersonagens.executar();
-    listaObstaculos.executar();
-}
 
 void Fase::executar()
 {
-    fundo.atualizar();
 
-    // atualiza entidade e desenha
-    desenhar();
+   // fundo.executar();
+    pColisao->executar();
+    
+    listaObstaculos.executar();
+    listaPersonagens.executar();
 
     // verifica colisão
     pColisao->executar();
-}
 
-void Fase::atualizar()
-{
 }

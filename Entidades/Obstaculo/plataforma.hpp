@@ -5,11 +5,6 @@
 
 #define CAMINHO_PLATAFORMA "C:/Users/crisn/Desktop/SpaceHunt/Midia/plataforma.png"
 
-#define ESCALA_X 1
-#define ESCALA_Y 1
-
-
-
 
 namespace SpaceHunt
 {
@@ -20,9 +15,10 @@ namespace SpaceHunt
             class Plataforma : public Obstaculo
             {
             public:
-                Plataforma(sf::Vector2f pos, sf::Vector2f tam);
+                Plataforma(sf::Vector2f pos = sf::Vector2f(0.0,0.0));
                 ~Plataforma();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
+                void executar();
             };
         }
         using namespace Obstaculos;

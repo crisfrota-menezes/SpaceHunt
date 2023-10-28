@@ -1,21 +1,20 @@
 #include "uraniano.hpp"
 
-Uraniano::Uraniano(const sf::Vector2f pos, Jogador *jogador) : Inimigo(pos, sf::Vector2f(TAMANHO_Uraniano_X, TAMANHO_Uraniano_Y), jogador, IDs::IDs::Uraniano)
-{
+Uraniano::Uraniano(const sf::Vector2f pos, Jogador *joga) : Inimigo(pos, joga, Identidade::IDs::Uraniano){
     vida = 2;
     dano = 2;
     inicializa();
 }
 
-Uraniano::~Uraniano()
-{
+Uraniano::~Uraniano(){
+    jogador = nullptr;
 }
 
 void Uraniano::inicializa()
 {
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/AndaA1.png", "ANDA", 5, 0.15f, sf::Vector2f(3, 1.5));
     animacao.addAnimacao("C:/Users/crisn/Desktop/SpaceHunt/Midia/ParadoA1.png", "PARADO", 6, 0.15f, sf::Vector2f(3, 1.5));
-    corpo.setOrigin(tam.x / 3.0f, tam.y / 5.0f);
+    sprite.setOrigin(sprite.getTexture()->getSize().x / 3.0f, sprite.getTexture()->getSize().y / 5.0f);
 }
 
 void Uraniano::colisao(Entidade *outraEnt, sf::Vector2f ds)
@@ -29,4 +28,8 @@ void Uraniano::colisao(Entidade *outraEnt, sf::Vector2f ds)
     }
     break;
     }
+}
+
+
+void Uraniano::executar(){
 }

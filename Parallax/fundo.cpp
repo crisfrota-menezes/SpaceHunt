@@ -1,6 +1,6 @@
 #include "fundo.hpp"
 
-Fundo::Fundo(const IDs::IDs ID):
+Fundo::Fundo(const Identidade::IDs ID):
     Ente(ID), posAnteriorCamera(pGrafico->getCamera().getCenter()),
     camadas()
 { 
@@ -38,10 +38,11 @@ void Fundo::desenhar(){
 }
 
 void Fundo::addCamada(const char* caminhoTextura, const float vel){
-    Camada* camada = new Camada((sf::Vector2f)pGrafico->getWindow()->getSize(), pGrafico->carregarTextura(caminhoTextura), vel);
+  /*  Camada* camada = new Camada((sf::Vector2f)pGrafico->getWindow()->getSize(), pGrafico->carregarTextura(caminhoTextura), vel);
     if(camada == nullptr){
         std::cout << "ERRO::Fundo::nao foi possivel criar uma camada" << std::endl;
         exit(1);
     }
     camadas.push_back(camada);
+    */
 }

@@ -1,7 +1,6 @@
 #include "inimigo.hpp"
 
-Inimigo::Inimigo(const sf::Vector2f pos, const sf::Vector2f tam, Jogador *jogador, IDs::IDs ID) : Personagem(pos, tam, VELOCIDADE_INIMIGO, ID), jogador(jogador), dtAux(0.0f)
-{
+Inimigo::Inimigo(const sf::Vector2f pos, Jogador *jogador, Identidade::IDs ID) : Personagem(pos, VELOCIDADE_INIMIGO, ID), jogador(jogador), dtAux(0.0f){
 
 }
 
@@ -49,7 +48,7 @@ void Inimigo::atualizar()
     {
         atualizaMoveAleatorio();
     }
-    atualizarPos();
+   // movimentar(sf::Vector2f(2.0,10.0)); Aqui vou fazer uma estrategia para pegar velocidades diferentes;
     dtAux += relogio.getElapsedTime().asSeconds() * 100;
     relogio.restart();
     animar();

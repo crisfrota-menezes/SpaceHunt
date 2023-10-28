@@ -1,49 +1,45 @@
 #include "animacao.hpp"
 
-Animacao::Animacao(sf::RectangleShape *corpo) : corpo(corpo), mapImagem(), imgAtual(""), relogio()
-{
+Animacao::Animacao(const sf::Texture* textur,int col, int lin):mapImagem(), imgAtual(""), relogio(),
+tam_x(textur->getSize().x /col), tam_y(textur->getSize().y / lin){
+    mapImagem.clear(); 
 }
 
 Animacao::~Animacao()
 {
-    std::map<std::string, Imagem *>::iterator it = mapImagem.begin();
+    std::map<std::string, sf::IntRect*>::iterator it = mapImagem.begin();
     while (it != mapImagem.end())
     {
         if (it->second)
         {
             delete (it->second);
-            it->second = nullptr;
         }
         it++;
     }
     mapImagem.clear();
 }
 
-void Animacao::atualizar(const bool paraEsquerda, std::string imgAtual)
-{
-    if (this->imgAtual != imgAtual)
+void Animacao::atualizar(const bool paraEsquerda, std::string imgAt)
+{ /*
+    if (imgAtual != imgAt)
     {
-        if (this->imgAtual != "")
+        if (imgAtual != "")
         {
-            mapImagem[this->imgAtual]->resetar();
+            mapImagem[imgAtual]->resetar();
         }
-        this->imgAtual = imgAtual;
+        imgAtual = imgAt;
     }
     float dt = relogio.getElapsedTime().asSeconds();
     relogio.restart();
 
-    Imagem *img = mapImagem[this->imgAtual];
-    sf::Vector2f tamCorpo = corpo->getSize();
+    Imagem *img = mapImagem[imgAtual];
     sf::Vector2f escala = img->getEscala();
 
     img->atualizar(paraEsquerda, dt);
-    corpo->setTextureRect(img->getTamanho());
-    corpo->setTexture(img->getTextura());
-    corpo->setScale(escala.x, escala.y);
+   */
 }
 
-void Animacao::addAnimacao(const char *caminhoTextura, std::string nomeAnimacao, const unsigned int qtdImagem, const float tempoTroda, const sf::Vector2f escala)
-{
-    Imagem *img = new Imagem(caminhoTextura, qtdImagem, tempoTroda, escala);
-    mapImagem.insert(std::pair<std::string, Imagem *>(nomeAnimacao, img));
+void Animacao::addAnimacao(std::string nomeAnimacao, sf::Vector2f posi){
+    sf::IntRect* rect = new sf::IntRect(posi.x,posi.y,tam_x,tam_y);
+    mapImagem.insert(std::pair<std::string, sf::IntRect*>(nomeAnimacao, rect));
 }

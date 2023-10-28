@@ -1,22 +1,22 @@
 #pragma once
-
-#include "imagem.hpp"
+#include <string>
 #include <map>
+#include "SFML/Graphics.hpp"
 
 namespace SpaceHunt {
     namespace Animador {
         class Animacao {
         private:
-            sf::RectangleShape* corpo;
-            std::map<std::string, Imagem*> mapImagem;
+            std::map<std::string, sf::IntRect*> mapImagem;
             sf::Clock relogio;
             std::string imgAtual;
+           const int tam_x,tam_y;
 
         public:
-            Animacao(sf::RectangleShape* corpo);
+            Animacao(const sf::Texture* textura = nullptr, int num_col = 1, int num_lin = 1);
             ~Animacao();            
             void atualizar(const bool paraEsquerda, std::string imgAtual);
-            void addAnimacao(const char* caminhoTextura, std::string nomeAnimacao, const unsigned int qtdImagem, const float tempoTroca, const sf::Vector2f escala);
+            void addAnimacao(std::string nomeAnimacao, sf::Vector2f locali);
             
         };
     }

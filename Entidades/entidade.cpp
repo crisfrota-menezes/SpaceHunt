@@ -1,42 +1,23 @@
 #include "entidade.hpp"
 
-Entidade::Entidade(const sf::Vector2f pos, const sf::Vector2f tam, const IDs::IDs ID) : corpo(sf::RectangleShape(tam)), Ente(ID), pos(pos), tam(tam)
-{
-    corpo.setPosition(pos);
+Entidade::Entidade(const sf::Vector2f pos, const Identidade::IDs id):Ente(id),dano(0){
+    setPos(pos);
 }
 
-Entidade::~Entidade()
-{
-}
-
-const sf::RectangleShape Entidade::getCorpo()
-{
-    return corpo;
+Entidade::~Entidade(){
 }
 
 void Entidade::setPos(const sf::Vector2f pos)
 {
-    corpo.setPosition(pos);
-    this->pos = pos;
+    sprite.setPosition(pos);
 }
 
-sf::Vector2f Entidade::getPos()
-{
-    return pos;
+sf::Vector2f Entidade::getPos(){
+    return sprite.getPosition();
 }
 
-const sf::Vector2f Entidade::getTam()
-{
-    return tam;
-}
 
-void Entidade::desenhar()
-{
-    pGrafico->desenhaElemento(corpo);
-}
-
-int Entidade::getDano()
-{
+int Entidade::getDano(){
     return dano;
 }
 
