@@ -1,6 +1,6 @@
 #include "animacao.hpp"
 
-Animacao::Animacao(sf::Texture* textur,int col, int lin):mapImagem(), imgAtual(""), relogio(),
+Animacao::Animacao(const sf::Texture* textur,int col, int lin):mapImagem(), imgAtual(""), relogio(),
 tam_x(textur->getSize().x /col), tam_y(textur->getSize().y / lin){
     mapImagem.clear(); 
 }

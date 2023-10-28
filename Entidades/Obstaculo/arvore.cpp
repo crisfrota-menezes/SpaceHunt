@@ -22,7 +22,7 @@ void Arvore::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
 {
     sf::Vector2f posOutro = pPersonagem->getPos();
     sf::Vector2i tamOutro = pPersonagem->getSprite()->getTextureRect().getSize();
-    sf::Vector2f velFinal = pPersonagem->getVelFinal();
+    sf::Vector2f velFinal = pPersonagem->getVelocidade();
     if (ds.x < 0.0f && ds.y < 0.0f)
     { // houve colisao
         if (ds.x > ds.y)
@@ -71,7 +71,7 @@ void Arvore::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
         }
     }
     pPersonagem->setPos(posOutro);
-    pPersonagem->setVelFinal(velFinal);
+    pPersonagem->setVelocidade(velFinal);
 }
 
 void Arvore::executar(){

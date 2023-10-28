@@ -13,7 +13,7 @@ namespace SpaceHunt {
            const int tam_x,tam_y;
 
         public:
-            Animacao(sf::Texture* textura = nullptr, int num_col = 1, int num_lin = 1);
+            Animacao(const sf::Texture* textura = nullptr, int num_col = 1, int num_lin = 1);
             ~Animacao();            
             void atualizar(const bool paraEsquerda, std::string imgAtual);
             void addAnimacao(std::string nomeAnimacao, sf::Vector2f locali);

@@ -14,15 +14,15 @@ namespace SpaceHunt
             class Jogador : public Personagem
             {
             private:
-                void inicializa();
                 bool noChao;
                 bool n_jogador;
                 static bool Jogador2;
             public:
-                Jogador(const sf::Vector2f pos = sf::Vector2f(0.0,0.0));
+                Jogador(const sf::Vector2f pos = sf::Vector2f(300.0,300.0));
                 ~Jogador();
                 void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f));
                 void executar();
+                void inicializar();
                 void pular();
                 void podePular();
                 void animar();

@@ -32,7 +32,7 @@ namespace SpaceHunt {
             ListaEntidades listaPersonagens;
             ListaEntidades listaObstaculos;
             GerenciadorColisao* pColisao;
-            Fundo fundo;
+           // Fundo fundo;
             
         public:
             Fase(const Identidade::IDs ID_Fase = Identidade::IDs::vazio, const Identidade::IDs ID_Fundo = Identidade::IDs::vazio);
@@ -47,7 +47,6 @@ namespace SpaceHunt {
             void criarProjetil(const sf::Vector2f pos);
             virtual void criarMapa() = 0;
             void criarEntidade(char letra, const sf::Vector2i pos);
-            void desenhar();
             virtual void executar() = 0;
             virtual void criarFundo() = 0;
         };

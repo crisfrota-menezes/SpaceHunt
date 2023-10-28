@@ -7,10 +7,8 @@ Alterações 1:
 - No Gerenciado de Eventos o método verificaTeclaPressionada pode ser utilizado um switch/case. ->>  A Fazer. -> Cris
 
 
-- As classes precisam ter uma construtora sem parametros(aqui da pra por apenas valores default). ->> A Fazer. -> Ricardo.
-- Rever movimentação dos personagens. ->> A Fazer. -> Ricardo.
+- Rever movimentação dos personagens. ->> pronto mas aguarda reunião. -> Ricardo.
 - Em inimigo é bom continuar com o método colisao virtual e definir ele nas classes bases. ->> Meio feito. -> Ricardo.
-- É bom as Entidades terem um atributo tamanho mas é melhor a gente atrelar ele ao tamanho que o SFML nos dá. ->> A Fazer. -> Ricardo
 
 
 

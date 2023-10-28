@@ -33,10 +33,10 @@ const sf::Vector2f GerenciadorColisao::calculaColisao(Entidade *ent1, Entidade *
 
 void GerenciadorColisao::executar()
 {
-    for (int i = 0; i < listaPersonagem->getTam() - 1; i++)
+    for (int i = 0; i < listaPersonagem->getTamanho() - 1; i++)
     {
         Entidade *ent1 = listaPersonagem->operator[](i);
-        for (int j = i + 1; j < listaPersonagem->getTam(); j++)
+        for (int j = i + 1; j < listaPersonagem->getTamanho(); j++)
         {
             Entidade *ent2 = listaPersonagem->operator[](j);
             sf::Vector2f ds = calculaColisao(ent1, ent2);
@@ -47,10 +47,10 @@ void GerenciadorColisao::executar()
         }
     }
 
-    for (int i = 0; i < listaPersonagem->getTam(); i++)
+    for (int i = 0; i < listaPersonagem->getTamanho(); i++)
     {
         Entidade *ent1 = listaPersonagem->operator[](i);
-        for (int j = 0; j < listaObstaculo->getTam(); j++)
+        for (int j = 0; j < listaObstaculo->getTamanho(); j++)
         {
             Entidade *ent2 = listaObstaculo->operator[](j);
             sf::Vector2f ds = calculaColisao(ent1, ent2);

@@ -31,7 +31,7 @@ void Projetil::colisao(Entidade *outraEnt, sf::Vector2f ds)
     case (Identidade::IDs::jogador):
     {
         cout << "Jogador atingido" << endl;
-        outraEnt->vida -= dano;
+        
         outraEnt->setPos(sf::Vector2f(posOutro.x - 75.0f, posOutro.y - 25.0f));
         delete this;
     }

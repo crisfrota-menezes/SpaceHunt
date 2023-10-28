@@ -14,7 +14,7 @@ namespace SpaceHunt
             class Personagem : public Entidade
             {
             protected:
-                sf::Vector2f velFinal;
+                sf::Vector2f velocidade;
                 const float velMax;
                 bool podeMover;
                 bool paraEsquerda;
@@ -26,11 +26,15 @@ namespace SpaceHunt
             public:
                 Personagem(const sf::Vector2f pos = sf::Vector2f(0.0,0.0) , const float vel = 2.0 , const Identidade::IDs ID = Identidade::IDs::vazio);
                 ~Personagem();
-                void setVelFinal(sf::Vector2f velFinal);
-                const sf::Vector2f getVelFinal() const;
-                void andar(const bool paraEsquerda);
+                
                 void parar();
-                void atualizarPos();
+                void atualizarPos(sf::Vector2f dis);
+
+                void andar(const bool paraEsquerda);
+                sf::Vector2f calculaVel(sf::Vector2f vel);
+                void setVelocidade(sf::Vector2f velFinal);
+                const sf::Vector2f getVelocidade();
+
                 virtual void animar();
                 virtual void colisao(Entidade *outraEnt, sf::Vector2f ds = sf::Vector2f(0.0f, 0.0f)) = 0;
                 virtual void executar() = 0;

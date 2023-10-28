@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Entidades/entidade.hpp"
-#include "lista.hpp"
+#include "Lista.hpp"
 
 namespace SpaceHunt
 {
@@ -15,14 +15,15 @@ namespace SpaceHunt
         public:
             ListaEntidades();
             ~ListaEntidades();
+
             void inserir(Entidade *ent);
             void remover(int pos);
             void remover(Entidade *ent);
-            Entidade *operator[](int pos);
-            int getTam();
-            bool vazia();
+            Entidade* operator[](int pos);
+            void inicializar();
             void executar();
             void limpar();
+            const int getTamanho() const;
         };
     }
     using namespace Listas;

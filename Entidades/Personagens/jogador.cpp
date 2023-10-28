@@ -5,34 +5,36 @@
 Jogador::Jogador(const sf::Vector2f pos) : Personagem(pos, VELOCIDADE_JOGADOR, Identidade::IDs::jogador), noChao(false)
 {
     vida = 10;
-    inicializa();
 }
 
 Jogador::~Jogador()
 {
 }
 
-void Jogador::inicializa()
-{
-    animacao.addAnimacao("ANDA", sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("PARADO", sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("PULA", sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("CAI", sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("ATACA", sf::Vector2f(3, 1.5));
-    animacao.addAnimacao("HIT", sf::Vector2f(3, 1.5));
-    sprite.setOrigin(sf::Vector2f(sprite.getTextureRect().width / 2.0f, sprite.getTextureRect().height / 5.8f));
+void Jogador::inicializar(){
+
+    SetSprite();
+  //  animacao.addAnimacao("ANDA", sf::Vector2f(0, 1.5));
+  //  animacao.addAnimacao("PARADO", sf::Vector2f(tam_text, 1.5));
+    //animacao.addAnimacao("PULA", sf::Vector2f(3, 1.5));
+    //animacao.addAnimacao("CAI", sf::Vector2f(3, 1.5));
+    //animacao.addAnimacao("ATACA", sf::Vector2f(3, 1.5));
+    //animacao.addAnimacao("HIT", sf::Vector2f(3, 1.5));
+    //sprite.setOrigin(sf::Vector2f(sprite.getTextureRect().width / 2.0f, sprite.getTextureRect().height / 5.8f));
+    sprite.setPosition(100.0,100.0);
 }
 
 void Jogador::executar()
 {
-    atualizarPos();
-    animar();
-    pGrafico->atualizarCamera(sprite.getPosition());
+  //  atualizarPos();
+   // animar();
+    desenhar();
+   // pGrafico->atualizarCamera(sprite.getPosition());
 }
 
 void Jogador::animar()
 {
-    if (!noChao && velFinal.y > 0.0f)
+    if (!noChao && velocidade.y > 0.0f)
     {
         animacao.atualizar(paraEsquerda, "CAI");
     }
@@ -124,7 +126,7 @@ void Jogador::pular()
 {
     if (noChao)
     {
-        velFinal.y = -sqrt(2.0f * GRAVIDADE * TAMANHO_PULO);
+        velocidade.y = -sqrt(2.0f * GRAVIDADE * TAMANHO_PULO);
         noChao = false;
     }
 }

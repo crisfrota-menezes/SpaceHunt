@@ -18,14 +18,15 @@ namespace SpaceHunt
 
     public:
         Ente(const Identidade::IDs id = Identidade::IDs::vazio);
-        Ente();
         virtual ~Ente();
         const Identidade::IDs getID() const;
         virtual void desenhar();
         virtual void executar() = 0;
         void setGGrafico(GerenciadorGrafico* pGrafico);
         const sf::Texture* getTexture() const;
+        void SetSprite();
         sf::Sprite* getSprite();
+        virtual void inicializar();
     };
 }
 using namespace SpaceHunt;

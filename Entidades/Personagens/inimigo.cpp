@@ -48,7 +48,7 @@ void Inimigo::atualizar()
     {
         atualizaMoveAleatorio();
     }
-    atualizarPos();
+   // movimentar(sf::Vector2f(2.0,10.0)); Aqui vou fazer uma estrategia para pegar velocidades diferentes;
     dtAux += relogio.getElapsedTime().asSeconds() * 100;
     relogio.restart();
     animar();

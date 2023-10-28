@@ -13,8 +13,8 @@ namespace SpaceHunt
     private:
         GerenciadorGrafico *pGrafico;
         GerenciadorEvento *pEvento;
-        Fase *fase;
-        void criarFase();
+        Marte fase_1;
+        Jogador Teste;
 
     public:
         Jogo();
