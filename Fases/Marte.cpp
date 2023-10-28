@@ -28,7 +28,6 @@ void Marte::criarMapa()
     if (!arquivo.is_open())
     {
         std::cout << "Marte::nao foi possivel abrir o arquivo" << std::endl;
-        exit(1);
     }
     int j = 0;
     while (std::getline(arquivo, linha))

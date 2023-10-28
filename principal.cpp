@@ -1,6 +1,6 @@
 #include "principal.hpp"
 
-Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()),pEvento(pEvento->getGerenciadorEvento()), Teste(),fase_1()
+Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()),pEvento(pEvento->getGerenciadorEvento()), Teste(),Fase_Marte()
 {
 
     Teste.setGGrafico(pGrafico);
@@ -33,7 +33,7 @@ void Jogo::run()
     {
        pEvento->executar();
        pGrafico->limpar();
-     //  fase_1.executar();
+       Fase_Marte.executar();
        Teste.executar();
        pGrafico->mostraElementos();
     }
