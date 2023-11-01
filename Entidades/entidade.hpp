@@ -11,7 +11,7 @@ namespace SpaceHunt
         protected:
             int dano;
             int vida;
-
+            float velocidade;
         public:
             Entidade(const sf::Vector2f pos = sf::Vector2f(0.0,0.0) , const Identidade::IDs id = Identidade::IDs::vazio);
             ~Entidade();
