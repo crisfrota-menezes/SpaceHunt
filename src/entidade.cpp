@@ -1,4 +1,4 @@
-#include "entidade.hpp"
+#include "../include/Entidades/entidade.hpp"
 
 Entidade::Entidade(const sf::Vector2f pos, const Identidade::IDs id):Ente(id),dano(0){
     setPos(pos);

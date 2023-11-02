@@ -1,4 +1,4 @@
-#include "uraniano.hpp"
+#include "../include/Entidades/uraniano.hpp"
 
 Uraniano::Uraniano(const sf::Vector2f pos, Jogador *joga) : Inimigo(pos, joga, Identidade::IDs::Uraniano){
     vida = 2;

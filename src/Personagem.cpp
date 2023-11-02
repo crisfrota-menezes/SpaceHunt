@@ -1,4 +1,4 @@
-#include "Personagem.hpp"
+#include "../include/Entidades/Personagem.hpp"
 #include <cmath>
 
 

@@ -1,4 +1,4 @@
-#include "listaEntidade.hpp"
+#include "../include/Listas/listaEntidade.hpp"
 
 ListaEntidades::ListaEntidades() : lista(){
     limpar();

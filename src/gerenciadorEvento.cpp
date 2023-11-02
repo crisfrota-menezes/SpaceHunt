@@ -1,4 +1,4 @@
-#include "gerenciadorEvento.hpp"
+#include "../include/Gerenciadores/gerenciadorEvento.hpp"
 
 GerenciadorEvento *GerenciadorEvento::pEvento = nullptr;
 

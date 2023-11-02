@@ -1,4 +1,4 @@
-#include "plataforma.hpp"
+#include "../include/Entidades/plataforma.hpp"
 
 Plataforma::Plataforma(sf::Vector2f pos) : Obstaculo(pos, Identidade::IDs::plataforma)
 {

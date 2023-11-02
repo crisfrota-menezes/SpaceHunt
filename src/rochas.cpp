@@ -1,4 +1,4 @@
-#include "rochas.hpp"
+#include "../include/Entidades/rochas.hpp"
 
 Rochas::Rochas(sf::Vector2f pos) : Obstaculo(pos, Identidade::IDs::Rochas)
 {

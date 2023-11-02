@@ -1,4 +1,4 @@
-#include "fundo.hpp"
+#include "../include/Animacao/fundo.hpp"
 
 Fundo::Fundo(const Identidade::IDs ID):
     Ente(ID), posAnteriorCamera(pGrafico->getCamera().getCenter()),

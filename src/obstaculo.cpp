@@ -1,4 +1,4 @@
-#include "obstaculo.hpp"
+#include "../include/Entidades/obstaculo.hpp"
 
 Obstaculo::Obstaculo(const sf::Vector2f pos, const Identidade::IDs ID):
     Entidade(pos, ID){

@@ -1,4 +1,4 @@
-#include "jogador.hpp"
+#include "../include/Entidades/jogador.hpp"
 
 #include <cmath>
 

@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../Parallax/fundo.hpp"
+#include "../Animacao/fundo.hpp"
 
 //Personagens
-#include "../Entidades/Personagens/jogador.hpp"
-#include "../Entidades/Personagens/uraniano.hpp"
-#include "../Entidades/Personagens/verme.hpp"
-#include "../Entidades/Personagens/venusiano.hpp"
+#include "../Entidades/jogador.hpp"
+#include "../Entidades/uraniano.hpp"
+#include "../Entidades/verme.hpp"
+#include "../Entidades/venusiano.hpp"
 #include "../Entidades/projetil.hpp"
 
 //Obstaculos
-#include "../Entidades/Obstaculo/arvore.hpp"
-#include "../Entidades/Obstaculo/rochas.hpp"
-#include "../Entidades/Obstaculo/plataforma.hpp"
+#include "../Entidades/arvore.hpp"
+#include "../Entidades/rochas.hpp"
+#include "../Entidades/plataforma.hpp"
 
 //Gerenciadores
 #include "../Gerenciadores/GerenciadorColisao.hpp"

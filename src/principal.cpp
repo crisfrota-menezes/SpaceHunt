@@ -1,4 +1,4 @@
-#include "principal.hpp"
+#include "../include/principal.hpp"
 
 Jogo::Jogo() : pGrafico(pGrafico->getGerenciadorGrafico()),pEvento(pEvento->getGerenciadorEvento()), Teste(),Fase_Marte(), testando()
 {

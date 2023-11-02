@@ -1,8 +1,8 @@
 #pragma once
 
 #include "fase.hpp"
-#include "../Entidades/Personagens/jogador.hpp"
-#include "../Entidades/Personagens/Personagem.hpp"
+#include "../Entidades/jogador.hpp"
+#include "../Entidades/Personagem.hpp"
 
 namespace SpaceHunt
 {

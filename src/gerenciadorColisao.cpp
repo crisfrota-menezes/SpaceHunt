@@ -1,4 +1,4 @@
-#include "gerenciadorColisao.hpp"
+#include "../include/Gerenciadores/gerenciadorColisao.hpp"
 
 GerenciadorColisao::GerenciadorColisao(ListaEntidades *listaPersonagem, ListaEntidades *listaObstaculo) : listaPersonagem(listaPersonagem), listaObstaculo(listaObstaculo)
 {

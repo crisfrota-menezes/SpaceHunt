@@ -1,6 +1,7 @@
-#include "arvore.hpp"
+#include "../include/Entidades/arvore.hpp"
 
-Arvore::Arvore(sf::Vector2f pos): Obstaculo(pos, Identidade::IDs::Arvore), flexibilidade(0.25f){
+Arvore::Arvore(sf::Vector2f pos) : Obstaculo(pos, Identidade::IDs::Arvore), flexibilidade(0.25f)
+{
 }
 
 Arvore::~Arvore()
@@ -10,7 +11,7 @@ Arvore::~Arvore()
 void Arvore::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 {
     sf::Vector2f posOutro = outraEntidade->getPos();
-    //sf::Vector2i tamOutro = outraEntidade->getSprite()->getTextureRect().getSize();
+    // sf::Vector2i tamOutro = outraEntidade->getSprite()->getTextureRect().getSize();
 
     if (outraEntidade->getID() == Identidade::IDs::jogador || outraEntidade->getID() == Identidade::IDs::Uraniano || outraEntidade->getID() == Identidade::IDs::Venusiano || outraEntidade->getID() == Identidade::IDs::Verme)
     {
@@ -21,7 +22,7 @@ void Arvore::colisao(Entidade *outraEntidade, sf::Vector2f ds)
 void Arvore::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
 {
     sf::Vector2f posOutro = pPersonagem->getPos();
-    //sf::Vector2i tamOutro = pPersonagem->getSprite()->getTextureRect().getSize();
+    // sf::Vector2i tamOutro = pPersonagem->getSprite()->getTextureRect().getSize();
     sf::Vector2f velFinal = pPersonagem->getVelocidade();
     if (ds.x < 0.0f && ds.y < 0.0f)
     { // houve colisao
@@ -32,13 +33,13 @@ void Arvore::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
                 velFinal.x *= flexibilidade;
                 if (posOutro.x < sprite.getPosition().x)
                 { // colisão em x
-                    //sprite.getPosition().x -= ds.x;
+                  // sprite.getPosition().x -= ds.x;
                 }
                 else
                 {
-                    //pos.x += ds.x;
+                    // pos.x += ds.x;
                 }
-              //  setPos(pos);
+                //  setPos(pos);
             }
             else
             {
@@ -60,7 +61,7 @@ void Arvore::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
                 if (pPersonagem->getID() == Identidade::IDs::jogador)
                 {
                     Jogador *pJogador = static_cast<Jogador *>(pPersonagem);
-                    //pJogador->podePular();
+                    // pJogador->podePular();
                 }
             }
             else
@@ -74,6 +75,6 @@ void Arvore::colisaoObstaculo(sf::Vector2f ds, Personagem *pPersonagem)
     pPersonagem->setVelocidade(velFinal);
 }
 
-void Arvore::executar(){
-    
+void Arvore::executar()
+{
 }

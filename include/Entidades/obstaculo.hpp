@@ -1,10 +1,10 @@
 #pragma once
 
-#include "../entidade.hpp"
-#include "../Personagens/jogador.hpp"
-#include "../Personagens/inimigo.hpp"
+#include "entidade.hpp"
+#include "jogador.hpp"
+#include "inimigo.hpp"
 
-#include "../../Animacao/animacao.hpp"
+#include "../Animacao/animacao.hpp"
 
 namespace SpaceHunt
 {

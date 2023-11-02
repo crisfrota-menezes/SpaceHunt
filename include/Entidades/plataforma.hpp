@@ -1,7 +1,7 @@
 #pragma once
 
 #include "obstaculo.hpp"
-#include "../Personagens/Personagem.hpp"
+#include "Personagem.hpp"
 
 #define CAMINHO_PLATAFORMA "C:/Users/crisn/Desktop/SpaceHunt/Midia/plataforma.png"
 

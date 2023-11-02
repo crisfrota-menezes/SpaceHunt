@@ -1,4 +1,4 @@
-#include "animacao.hpp"
+#include "../include/Animacao/animacao.hpp"
 
 Animacao::Animacao(const sf::Texture* textur,int col, int lin):mapImagem(), imgAtual(""), relogio(),
 tam_x(textur->getSize().x /col), tam_y(textur->getSize().y / lin){

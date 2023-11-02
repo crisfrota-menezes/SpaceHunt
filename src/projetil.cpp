@@ -1,4 +1,4 @@
-#include "projetil.hpp"
+#include "../include/Entidades/projetil.hpp"
 
 Projetil::Projetil(const sf::Vector2f pos, Entidade* don)
     : Entidade(pos, Identidade::IDs::Projetil),

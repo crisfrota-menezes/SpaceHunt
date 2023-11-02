@@ -1,4 +1,4 @@
-#include "fase.hpp"
+#include "../include/Fases/fase.hpp"
 
 Fase::Fase(const Identidade::IDs ID_Fase, const Identidade::IDs ID_Fundo) : Ente(ID_Fase),
                                                              // fundo(ID_Fundo),

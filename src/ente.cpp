@@ -1,4 +1,4 @@
-#include "ente.hpp"
+#include "../include/ente.hpp"
 
 Ente::Ente(const Identidade::IDs id):identificador(id),sprite(),textura(){
     sprite.setTextureRect(sf::IntRect(250,250,30,30)); // padrão para objetos inicializados mal

@@ -1,4 +1,4 @@
-#include "venusiano.hpp"
+#include "../include/Entidades/venusiano.hpp"
 
 Venusiano::Venusiano(const sf::Vector2f pos, Jogador *joga) : Inimigo(pos, joga, Identidade::IDs::Venusiano)
 {

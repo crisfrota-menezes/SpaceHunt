@@ -1,6 +1,5 @@
-#include "principal.hpp"
-
-#include "Menus/menu.hpp"
+#include "../include/principal.hpp"
+#include "../include/Menus/menu.hpp"
 
 int main()
 {

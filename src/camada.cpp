@@ -1,4 +1,4 @@
-#include "camada.hpp"
+#include "../include/Animacao/camada.hpp"
 
 Camada::Camada(const sf::Vector2f tamJanela, sf::Texture textura, const float vel):
     tamJanela(tamJanela), textura(textura), dimensao(0,0,0,0), vel(vel)

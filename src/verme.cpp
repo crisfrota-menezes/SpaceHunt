@@ -1,6 +1,7 @@
-#include "verme.hpp"
+#include "../include/Entidades/verme.hpp"
 
-Verme::Verme(const sf::Vector2f pos, Jogador *jogador) : Inimigo(pos, jogador, Identidade::IDs::Verme){
+Verme::Verme(const sf::Vector2f pos, Jogador *jogador) : Inimigo(pos, jogador, Identidade::IDs::Verme)
+{
     vida = 1;
     dano = 1;
     inicializa();
@@ -30,7 +31,6 @@ void Verme::colisao(Entidade *outraEnt, sf::Vector2f ds)
     }
 }
 
-void Verme::executar(){
-
-
+void Verme::executar()
+{
 }
